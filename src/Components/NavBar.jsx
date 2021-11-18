@@ -4,9 +4,13 @@ import { Link } from "react-router-dom";
 import { AiFillGithub } from "react-icons/ai";
 import { useEffect, useRef, useState } from "react";
 import SideMenu from "./SideMenu";
-const NavBar = ({ darkMode }) => {
+import { useDispatch, useSelector } from "react-redux";
+import { setDarkMode } from "../features/reducer";
+const NavBar = () => {
   const [bg, setBg] = useState("navbarBg");
   const divRef = useRef();
+  const dispatch = useDispatch();
+  const darkMode = useSelector((state) => state.data.darkMode);
   useEffect(() => {
     const scrollHandler = () => {
       if (window.scrollY > 65) {
@@ -58,11 +62,17 @@ const NavBar = ({ darkMode }) => {
         <div className="flex items-center px-2 space-x-2 btns">
           <div className="mode">
             {darkMode ? (
-              <div className="w-[40px] cursor-pointer h-[40px] grid place-items-center hover:bg-yellow-300 transition-all duration-500 rounded-lg btnBg">
+              <div
+                onClick={() => dispatch(setDarkMode())}
+                className="w-[40px] cursor-pointer h-[40px] grid place-items-center hover:bg-yellow-300 transition-all duration-500 rounded-lg btnBg"
+              >
                 <MoonIcon className="w-[20px] h-[20px] text-black" />
               </div>
             ) : (
-              <div className="w-[40px] h-[40px] grid cursor-pointer place-items-center rounded-lg btnBg">
+              <div
+                onClick={() => dispatch(setDarkMode())}
+                className="w-[40px] h-[40px] grid cursor-pointer place-items-center rounded-lg btnBg"
+              >
                 <SunIcon className="w-[20px] h-[20px] text-black" />
               </div>
             )}

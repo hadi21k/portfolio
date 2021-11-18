@@ -1,4 +1,3 @@
-import React from "react";
 
 const TimeLineItem = ({ data, index }) => {
   return (

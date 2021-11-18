@@ -10,9 +10,9 @@ const AboutSection = () => {
         <motion.p
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.7, ease: "easeOut"}}
         >
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Hadi is a student in Lebanese
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Hadi is a student at Lebanese
           University faculty of sceince, studying Computer sceince based in
           Beirut, Lebanon. Started his journey in Web development in November,
           2020 before starting univeristy. He has passion to build websites for
