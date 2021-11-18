@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;600;700&family=Teko:wght@400;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --navbarBg: #111e27;
+  --mainBg: #111e27;
+  --btnBg: #ffce45;
+  --tekoFont: "Teko", sans-serif;
+  --firaSans: "Fira Sans", sans-serif;
+}
+
+@layer base {
+  .teko {
+    font-family: var(--tekoFont);
+  }
+  .firaSans {
+    font-family: var(--firaSans);
+  }
+  .mainBg {
+    background-color: var(--mainBg);
+  }
+  .navbarBg {
+    background-color: var(--navbarBg);
+  }
+  .btnBg {
+    background-color: var(--btnBg);
+  }
+}
+
+.time-container::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 4px;
+  height: 100%;
+  background-color: white;
+  top: 0;
+  transition: all 0.5s ease-in-out;
+}
+@media screen and (max-width: 640px) {
+  .time-container::after {
+    left: 0;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .timeline-item:nth-child(odd) {
+    align-self: flex-start;
+  }
+}
+@media screen and (min-width: 641px) {
+  .timeline-item:nth-child(odd) {
+    align-self: flex-end;
+  }
+}
+
