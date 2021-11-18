@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import React from "react";
 import AboutSection from "./AboutSection";
 import BioSection from "./BioSection";
@@ -10,7 +11,13 @@ const About = () => {
           Hello, I’m a Front End Developer based in Lebanon.
         </div>
         <div className="py-1 mt-2 text-2xl font-semibold sm:text-3xl teko">
-          <h1>Hadi Diab</h1>
+          <motion.h1
+            initial={{ x: -100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.8 }}
+          >
+            Hadi Diab
+          </motion.h1>
         </div>
         <AboutSection />
         <BioSection />
