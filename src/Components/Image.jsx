@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import Flame from "../Assets/3d-flame-278.png";
+import Flame from "../Assets/3d-flame-278.webp";
 const Image = () => {
   return (
     <div className="w-full img h-[340px] grid place-items-center">

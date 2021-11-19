@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 import { useSelector } from "react-redux";
 import WorkSection from "./WorkSection";
-import motionImage from "../../Assets/motion.png";
-import dashboardImage from "../../Assets/dashboard.png";
-import teslaCloneImage from "../../Assets/teslaClone.png";
-import cryptoImage from "../../Assets/cryptoMarket.png";
-import pomodoroImage from "../../Assets/pomodoroTimer.png";
+import motionImage from "../../Assets/motion.webp";
+import dashboardImage from "../../Assets/dashboard.webp";
+import teslaCloneImage from "../../Assets/teslaClone.webp";
+import cryptoImage from "../../Assets/cryptoMarket.webp";
+import pomodoroImage from "../../Assets/pomodoroTimer.webp";
 import SocialSection from "../Social/SocialSection";
 
 const WorkPage = () => {

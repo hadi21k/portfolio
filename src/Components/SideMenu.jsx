@@ -21,14 +21,16 @@ const SideMenu = () => {
         >
           <Menu.Items
             as="ul"
-            className="absolute flex flex-col bottom-[-200px] h-[200px] w-[200px] right-5 outline-none rounded-lg justify-between py-3 btnBg "
+            className="absolute flex flex-col bottom-[-200px] h-[200px] w-[200px] right-5 outline-none rounded-lg justify-between py-2 dark:bg-[#ffce45] bg-red-500 "
           >
             <Link to="/">
               <Menu.Item as="li" className="h-[48px] w-full text-xl">
                 {({ active }) => (
                   <h1
                     className={`${
-                      active ? "bg-[#ffc832]" : "text-black"
+                      active
+                        ? "dark:bg-[#ffc832] bg-red-400"
+                        : "dark:text-black text-white"
                     } w-full h-full flex items-center px-4 transition-all duration-300`}
                   >
                     About
@@ -44,7 +46,9 @@ const SideMenu = () => {
                 {({ active }) => (
                   <h1
                     className={`${
-                      active ? "bg-[#ffc832]" : "text-black"
+                      active
+                        ? "dark:bg-[#ffc832] bg-red-400"
+                        : "dark:text-black text-white"
                     }  w-full h-full flex items-center px-4 transition-all duration-300`}
                   >
                     Works
@@ -63,15 +67,17 @@ const SideMenu = () => {
                 className="w-full text-xl h-[48px] flex items-center"
               >
                 {({ active }) => (
-                  <div
-                    href="#"
+                  <a
+                    href="https://github.com/hadi21k/portfolio"
                     className={`flex transition-all duration-300 px-4 w-full h-full items-center space-x-1 ${
-                      active ? "bg-[#ffc832]" : "text-black"
+                      active
+                        ? "dark:bg-[#ffc832] bg-red-400"
+                        : "dark:text-black text-white"
                     }`}
                   >
                     <AiFillGithub className="w-[20px] h-[20px] " />
                     <h1>Source</h1>
-                  </div>
+                  </a>
                 )}
               </Menu.Item>
             </a>
