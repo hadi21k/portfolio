@@ -29,7 +29,7 @@ const initialState = {
       liveDemo: "https://teslawebsitee-clone.netlify.app/",
     },
     cryptoMarket: {
-      title: "Crypto",
+      title: "Crypto Market",
       description: "Crypto Website for lively prices of coins",
       sourceLink: "https://github.com/hadi21k/crypto-market-app-reactjs",
       liveDemo: "https://cryptomarketappp.netlify.app/",

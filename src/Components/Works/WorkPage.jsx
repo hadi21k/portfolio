@@ -6,6 +6,7 @@ import dashboardImage from "../../Assets/dashboard.png";
 import teslaCloneImage from "../../Assets/teslaClone.png";
 import cryptoImage from "../../Assets/cryptoMarket.png";
 import pomodoroImage from "../../Assets/pomodoroTimer.png";
+import SocialSection from "../Social/SocialSection";
 
 const WorkPage = () => {
   const worksData = useSelector((state) => state.data.works);
@@ -27,16 +28,11 @@ const WorkPage = () => {
         <div className="grid grid-cols-1 gap-6 mt-5 sm:grid-cols-2 website-works-on">
           <WorkSection workData={worksData.motion} image={motionImage} />
           <WorkSection workData={worksData.dashboard} image={dashboardImage} />
-          <WorkSection
-            workData={worksData.teslaClone}
-            image={teslaCloneImage}
-          />
+          <WorkSection workData={worksData.teslaClone} image={teslaCloneImage}  />
           <WorkSection workData={worksData.cryptoMarket} image={cryptoImage} />
-          <WorkSection
-            workData={worksData.pomodoroTimer}
-            image={pomodoroImage}
-          />
+          <WorkSection workData={worksData.pomodoroTimer} image={pomodoroImage} />
         </div>
+        <SocialSection />
       </motion.div>
     </div>
   );

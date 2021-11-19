@@ -29,6 +29,8 @@ const WorkSection = ({ workData, image }) => {
           <a
             href={workData.link}
             className="flex items-center space-x-1 text-xl bg-[#ffce45] rounded-lg px-2 py-1 font-bold text-black teko"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             <AiFillGithub />
             <h1 className="">Source Code</h1>
@@ -36,6 +38,8 @@ const WorkSection = ({ workData, image }) => {
           <a
             href={workData.liveDemo}
             className="flex items-center bg-[#ffce45] px-2 py-1 text-xl rounded-lg space-x-1 font-bold text-black teko"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             <h1 className="">Live Demo</h1>
           </a>
