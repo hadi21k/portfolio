@@ -22,9 +22,11 @@
 @layer base {
   .teko {
     font-family: var(--tekoFont);
+    font-display: swap;
   }
   .firaSans {
     font-family: var(--firaSans);
+    font-display: swap;
   }
   .mainDarkBg {
     background-color: var(--mainDarkBg);
