@@ -10,7 +10,6 @@ import SocialSection from "../Social/SocialSection";
 
 const WorkPage = () => {
   const worksData = useSelector((state) => state.data.works);
-  console.log(worksData);
   return (
     <div className="mainBg min-h-[calc(100vh-65px)] mt-[65px] text-white">
       <motion.div
