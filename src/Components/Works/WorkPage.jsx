@@ -11,7 +11,7 @@ import SocialSection from "../Social/SocialSection";
 const WorkPage = () => {
   const worksData = useSelector((state) => state.data.works);
   return (
-    <div className="mainBg min-h-[calc(100vh-65px)] mt-[65px] text-white">
+    <div className="dark:bg-[#111e27] mainLightBg min-h-[calc(100vh-65px)] mt-[65px] text-white">
       <motion.div
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
