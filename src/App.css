@@ -4,6 +4,11 @@
 @tailwind components;
 @tailwind utilities;
 
+::-webkit-scrollbar {
+  height: 2px;
+  width: 2px;
+}
+
 :root {
   --navbarBg: #111e27;
   --mainBg: #111e27;
@@ -56,4 +61,3 @@
     align-self: flex-end;
   }
 }
-
