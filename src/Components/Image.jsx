@@ -6,7 +6,7 @@ const Image = () => {
       <motion.img
         initial={{ y: -20, opacity: 0 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, ease: "easeInOut" }}
+        transition={{ duration: 0.5, ease: "easeInOut" }}
         exit={{ y: 20, opacity: 0 }}
         src={Flame}
         alt="flame"
