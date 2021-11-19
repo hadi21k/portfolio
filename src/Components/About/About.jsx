@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import React from "react";
 import SocialSection from "../Social/SocialSection";
 import AboutSection from "./AboutSection";
 import BioSection from "./BioSection";

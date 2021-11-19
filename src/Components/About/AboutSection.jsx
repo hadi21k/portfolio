@@ -1,4 +1,3 @@
-import React from "react";
 const AboutSection = () => {
   return (
     <div className="mt-3 firaSans">

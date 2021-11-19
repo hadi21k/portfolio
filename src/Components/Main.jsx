@@ -1,4 +1,3 @@
-import { AnimatePresence } from "framer-motion";
 import About from "./About/About";
 import Image from "./Image";
 

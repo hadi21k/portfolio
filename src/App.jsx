@@ -1,8 +1,7 @@
+import "./App.css";
 import { AnimatePresence } from "framer-motion";
-import { useState } from "react";
 import { useSelector } from "react-redux";
 import { Route, Routes, useLocation } from "react-router";
-import "./App.css";
 import Main from "./Components/Main";
 import NavBar from "./Components/NavBar";
 import WorkPage from "./Components/Works/WorkPage";
