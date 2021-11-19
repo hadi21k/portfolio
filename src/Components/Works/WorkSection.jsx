@@ -18,7 +18,7 @@ const WorkSection = ({ workData, image }) => {
           >
             <a
               href={workData.sourceLink}
-              className="flex items-center space-x-1 text-xl bg-[#ffce45] hover:bg-[#ffce60] transition-all duration-500 rounded-lg px-2 py-1 font-bold text-black teko"
+              className="flex items-center space-x-1 text-xl dark:bg-[#ffce45] bg-red-500 transition-all duration-500 rounded-lg px-2 py-1 font-bold text-black teko"
               rel="noopener noreferrer"
               target="_blank"
             >
@@ -27,7 +27,7 @@ const WorkSection = ({ workData, image }) => {
             </a>
             <a
               href={workData.liveDemo}
-              className="flex items-center bg-[#ffce45] px-2 py-1 text-xl rounded-lg space-x-1 font-bold text-black teko"
+              className="flex items-center dark:bg-[#ffce45] bg-red-500 px-2 py-1 text-xl rounded-lg space-x-1 font-bold text-black teko"
               rel="noopener noreferrer"
               target="_blank"
             >
@@ -36,10 +36,10 @@ const WorkSection = ({ workData, image }) => {
           </div>
         </div>
         <div className="py-1 text-center teko">
-          <div className="text-2xl text-[#ffce45] font-bold title">
+          <div className="text-2xl text-[#111e27] dark:text-[#ffce45] font-bold title">
             <h1>{workData.title}</h1>
           </div>
-          <div className="description firaSans">
+          <div className="py-2 text-red-500 dark:text-white description firaSans">
             <p className="text-sm font-semibold">{workData.description}</p>
           </div>
         </div>

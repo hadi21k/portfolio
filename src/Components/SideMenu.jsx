@@ -7,8 +7,8 @@ const SideMenu = () => {
   return (
     <>
       <Menu as="div">
-        <Menu.Button className="w-[40px] h-[40px] outline-none cursor-pointer transition-all duration-300 border sm:hidden rounded-lg border-white grid place-items-center">
-          <MenuIcon className="w-[24px] text-white h-[24px]" />
+        <Menu.Button className="w-[40px] h-[40px] outline-none cursor-pointer transition-all duration-300 border sm:hidden rounded-lg border-[#111e27] dark:border-white grid place-items-center">
+          <MenuIcon className="w-[24px] lightTextMode dark:text-white h-[24px]" />
         </Menu.Button>
         <Transition
           as={Fragment}

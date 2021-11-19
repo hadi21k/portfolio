@@ -8,10 +8,10 @@ import {
 const SocialSection = () => {
   return (
     <div className="flex flex-col items-start py-6 pb-4 mt-3 firaSans">
-      <div className="text-[#FFCE45] teko text-3xl border-b-4 border-[#6C757D] text-center sm:mx-auto">
+      <div className="dark:text-[#FFCE45] text-[#111e27] teko text-3xl border-b-4 border-red-500 dark:border-[#6C757D] text-center sm:mx-auto">
         Connect with Me
       </div>
-      <div className="flex flex-col px-4 mt-4 space-y-4 sm:space-y-0 sm:items-center sm:justify-center sm:space-x-4 sm:w-full sm:flex-row">
+      <div className="flex flex-col px-4 mt-4 space-y-4 text-[#111e27] dark:text-white sm:space-y-0 sm:items-center sm:justify-center sm:space-x-4 sm:w-full sm:flex-row">
         <a
           href="https://github.com/hadi21k"
           className="flex items-center py-2 space-x-1 transition-all duration-300 sm:py-0 hover:text-red-500"

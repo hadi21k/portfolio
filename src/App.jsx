@@ -1,5 +1,6 @@
 import { AnimatePresence } from "framer-motion";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 import { Route, Routes, useLocation } from "react-router";
 import "./App.css";
 import Main from "./Components/Main";
@@ -8,10 +9,10 @@ import WorkPage from "./Components/Works/WorkPage";
 
 function App() {
   const location = useLocation();
-  const [darkMode, setDarkMode] = useState(true);
+  const darkMode = useSelector((state) => state.data.darkMode);
   return (
-    <div>
-      <NavBar darkMode={darkMode} />
+    <div className={`${darkMode ? "dark" : ""}`}>
+      <NavBar />
       <AnimatePresence exitBeforeEnter>
         <Routes location={location} key={location.key}>
           <Route path="/" element={<Main />} />

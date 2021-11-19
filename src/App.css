@@ -11,7 +11,9 @@
 
 :root {
   --navbarBg: #111e27;
-  --mainBg: #111e27;
+  --mainDarkBg: #111e27;
+  --mainLightBg: #f0e7db;
+  --lightTextMode: #111e27;
   --btnBg: #ffce45;
   --tekoFont: "Teko", sans-serif;
   --firaSans: "Fira Sans", sans-serif;
@@ -24,14 +26,20 @@
   .firaSans {
     font-family: var(--firaSans);
   }
-  .mainBg {
-    background-color: var(--mainBg);
+  .mainDarkBg {
+    background-color: var(--mainDarkBg);
+  }
+  .mainLightBg {
+    background-color: var(--mainLightBg);
   }
   .navbarBg {
     background-color: var(--navbarBg);
   }
   .btnBg {
     background-color: var(--btnBg);
+  }
+  .lightTextMode {
+    color: var(--lightTextMode);
   }
 }
 
@@ -41,7 +49,7 @@
   left: 50%;
   width: 4px;
   height: 100%;
-  background-color: white;
+  background-color: #ffce45;
   top: 0;
   transition: all 0.5s ease-in-out;
 }

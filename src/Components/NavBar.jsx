@@ -17,7 +17,7 @@ const NavBar = () => {
       if (window.scrollY > 65) {
         setBg("bg-transparent");
       } else {
-        setBg("navbarBg");
+        setBg("dark:navbarBg bg-white");
       }
     };
     window.addEventListener("scroll", scrollHandler);
@@ -32,26 +32,25 @@ const NavBar = () => {
     >
       <div className="container relative z-10 flex items-center justify-between w-full h-full mx-auto">
         <Link to="/">
-          <div className="flex items-center px-2 space-x-1 font-semibold text-white cursor-pointer logo group">
-            <ChipIcon className="w-6 h-6 text-white transition-all transform rotate-[-45deg] group-hover:rotate-0 duration-300" />
+          <div className="flex items-center px-2 space-x-1 font-semibold cursor-pointer lightTextMode dark:text-white logo group">
+            <ChipIcon className="w-6 h-6 transition-all transform rotate-[-45deg] group-hover:rotate-0 duration-300" />
             <h1 className="text-2xl">Hadi</h1>
           </div>
         </Link>
-        <ul className="items-center flex-1 hidden px-16 space-x-4 text-lg text-white lists sm:flex">
+        <ul className="items-center flex-1 hidden px-16 space-x-4 text-lg lightTextMode dark:text-white lists sm:flex">
           <Link to="/">
-            <li className="transition-all duration-300 cursor-pointer hover:text-[#ffce45]">
+            <li className="font-medium transition-all duration-300 cursor-pointer dark:hover:text-[#ffce45] hover:text-red-500">
               <motion.div layoutId="underline" />
               About
             </li>
           </Link>
           <Link to="/works">
-            <li className="transition-all duration-300 cursor-pointer hover:text-[#ffce45]">
+            <li className="transition-all duration-300 cursor-pointer hover:text-red-500 dark:hover:text-[#ffce45] font-medium">
               <motion.div layoutId="underline" />
               Works
             </li>
           </Link>
-          <li className="transition-all duration-300 cursor-pointer hover:text-[#ffce45]">
-            <motion.div layoutId="underline" />
+          <li className="transition-all duration-300 cursor-pointer hover:text-red-500 dark:hover:text-[#ffce45] font-medium">
             <a
               className="flex items-center space-x-1"
               href="https://github.com/hadi21k/portfolio"
@@ -68,16 +67,16 @@ const NavBar = () => {
             {darkMode ? (
               <div
                 onClick={() => dispatch(setDarkMode())}
-                className="w-[40px] cursor-pointer h-[40px] grid place-items-center hover:bg-yellow-300 transition-all duration-500 rounded-lg btnBg"
+                className="w-[40px] h-[40px] grid cursor-pointer place-items-center rounded-lg btnBg"
               >
-                <MoonIcon className="w-[20px] h-[20px] text-black" />
+                <SunIcon className="w-[20px] h-[20px]" />
               </div>
             ) : (
               <div
                 onClick={() => dispatch(setDarkMode())}
-                className="w-[40px] h-[40px] grid cursor-pointer place-items-center rounded-lg btnBg"
+                className="w-[40px] cursor-pointer h-[40px] grid place-items-center bg-indigo-600 text-white transition-all duration-500 rounded-lg"
               >
-                <SunIcon className="w-[20px] h-[20px] text-black" />
+                <MoonIcon className="w-[20px] h-[20px]" />
               </div>
             )}
           </div>

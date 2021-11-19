@@ -14,10 +14,10 @@ const About = () => {
         exit={{ y: 20, opacity: 0 }}
         className="container px-3 mx-auto mt-6 sm:px-0"
       >
-        <div className="py-2 text-lg font-semibold text-center text-black bg-white rounded sm:text-xl teko">
+        <div className="py-2 text-lg font-semibold text-center text-[#111e27] bg-white rounded sm:text-xl teko">
           Hello, I’m a Front End Developer based in Lebanon.
         </div>
-        <div className="py-1 mt-2 text-2xl font-semibold text-left sm:text-3xl teko">
+        <div className="py-1 mt-2 text-2xl font-semibold text-left text-[#111e27] dark:text-white sm:text-3xl teko">
           <h1>Hadi Diab</h1>
         </div>
         <AboutSection />
