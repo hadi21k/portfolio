@@ -18,7 +18,7 @@ const WorkSection = ({ workData, image }) => {
           >
             <a
               href={workData.sourceLink}
-              className="flex items-center space-x-1 text-xl bg-[#ffce45] rounded-lg px-2 py-1 font-bold text-black teko"
+              className="flex items-center space-x-1 text-xl bg-[#ffce45] hover:bg-[#ffce60] transition-all duration-500 rounded-lg px-2 py-1 font-bold text-black teko"
               rel="noopener noreferrer"
               target="_blank"
             >

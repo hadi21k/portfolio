@@ -39,18 +39,18 @@ const NavBar = () => {
         </Link>
         <ul className="items-center flex-1 hidden px-16 space-x-4 text-lg text-white lists sm:flex">
           <Link to="/">
-            <li className="transition-all duration-300 cursor-pointer hover:text-red-500">
+            <li className="transition-all duration-300 cursor-pointer hover:text-[#ffce45]">
               <motion.div layoutId="underline" />
               About
             </li>
           </Link>
           <Link to="/works">
-            <li className="transition-all duration-300 cursor-pointer hover:text-red-500 ">
+            <li className="transition-all duration-300 cursor-pointer hover:text-[#ffce45]">
               <motion.div layoutId="underline" />
               Works
             </li>
           </Link>
-          <li className="transition-all duration-300 cursor-pointer hover:text-red-500">
+          <li className="transition-all duration-300 cursor-pointer hover:text-[#ffce45]">
             <motion.div layoutId="underline" />
             <a
               className="flex items-center space-x-1"
