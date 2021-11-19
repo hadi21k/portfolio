@@ -8,10 +8,32 @@ const WorkSection = ({ workData, image }) => {
       <div
         onMouseEnter={() => setsourceCode(true)}
         onMouseLeave={() => setsourceCode(false)}
-        className="relative overflow-hidden"
       >
-        <div className="img">
+        <div className="relative img">
           <img src={image} alt={workData.title} className="rounded-lg" />
+          <div
+            className={`source-code space-x-2 left-0 w-full h-full absolute top-0 transition-all duration-500 bg-opacity-20 backdrop-filter backdrop-blur-sm rounded-lg flex items-center justify-center ${
+              sourceCode ? "opacity-1" : "opacity-0 "
+            } `}
+          >
+            <a
+              href={workData.sourceLink}
+              className="flex items-center space-x-1 text-xl bg-[#ffce45] rounded-lg px-2 py-1 font-bold text-black teko"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <AiFillGithub />
+              <h1>Source Code</h1>
+            </a>
+            <a
+              href={workData.liveDemo}
+              className="flex items-center bg-[#ffce45] px-2 py-1 text-xl rounded-lg space-x-1 font-bold text-black teko"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <h1>Live Demo</h1>
+            </a>
+          </div>
         </div>
         <div className="py-1 text-center teko">
           <div className="text-2xl text-[#ffce45] font-bold title">
@@ -20,29 +42,6 @@ const WorkSection = ({ workData, image }) => {
           <div className="description firaSans">
             <p className="text-sm font-semibold">{workData.description}</p>
           </div>
-        </div>
-        <div
-          className={`source-code space-x-2 left-0 w-full h-full absolute top-0 transition-all duration-500 bg-opacity-20 backdrop-filter backdrop-blur-sm rounded-lg flex items-center justify-center ${
-            sourceCode ? "opacity-1" : "opacity-0 "
-          } `}
-        >
-          <a
-            href={workData.link}
-            className="flex items-center space-x-1 text-xl bg-[#ffce45] rounded-lg px-2 py-1 font-bold text-black teko"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <AiFillGithub />
-            <h1 className="">Source Code</h1>
-          </a>
-          <a
-            href={workData.liveDemo}
-            className="flex items-center bg-[#ffce45] px-2 py-1 text-xl rounded-lg space-x-1 font-bold text-black teko"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <h1 className="">Live Demo</h1>
-          </a>
         </div>
       </div>
     </>
