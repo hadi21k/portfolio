@@ -8,7 +8,7 @@ import {
 const SocialSection = () => {
   return (
     <div className="flex flex-col items-start py-6 pb-4 mt-3 firaSans">
-      <div className="text-[#FFCE45] teko text-3xl border-b-4 border-[#6C757D]  text-center sm:mx-auto">
+      <div className="text-[#FFCE45] teko text-3xl border-b-4 border-[#6C757D] text-center sm:mx-auto">
         Connect with Me
       </div>
       <div className="flex flex-col px-4 mt-4 space-y-4 sm:space-y-0 sm:items-center sm:justify-center sm:space-x-4 sm:w-full sm:flex-row">

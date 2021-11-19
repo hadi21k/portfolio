@@ -1,0 +1,45 @@
+import { motion } from "framer-motion";
+import { useSelector } from "react-redux";
+import WorkSection from "./WorkSection";
+import motionImage from "../../Assets/motion.png";
+import dashboardImage from "../../Assets/dashboard.png";
+import teslaCloneImage from "../../Assets/teslaClone.png";
+import cryptoImage from "../../Assets/cryptoMarket.png";
+import pomodoroImage from "../../Assets/pomodoroTimer.png";
+
+const WorkPage = () => {
+  const worksData = useSelector((state) => state.data.works);
+  console.log(worksData);
+  return (
+    <div className="mainBg min-h-[calc(100vh-65px)] mt-[65px] text-white">
+      <motion.div
+        initial={{ y: -20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5, ease: "easeInOut" }}
+        exit={{ y: 20, opacity: 0 }}
+        className="container mx-auto lg:px-48"
+      >
+        <div className="flex items-center justify-center">
+          <div className="text-[#FFCE45] mx-auto teko text-3xl border-b-4 border-[#6C757D] inline">
+            Works
+          </div>
+        </div>
+        <div className="grid grid-cols-1 gap-6 mt-5 sm:grid-cols-2 website-works-on">
+          <WorkSection workData={worksData.motion} image={motionImage} />
+          <WorkSection workData={worksData.dashboard} image={dashboardImage} />
+          <WorkSection
+            workData={worksData.teslaClone}
+            image={teslaCloneImage}
+          />
+          <WorkSection workData={worksData.cryptoMarket} image={cryptoImage} />
+          <WorkSection
+            workData={worksData.pomodoroTimer}
+            image={pomodoroImage}
+          />
+        </div>
+      </motion.div>
+    </div>
+  );
+};
+
+export default WorkPage;

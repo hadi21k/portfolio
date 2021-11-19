@@ -9,6 +9,38 @@ const initialState = {
     { year: "2023", description: "Part Time Full Stack Development" },
     { year: "2024", description: "Finish Computer sceince degree" },
   ],
+  works: {
+    motion: {
+      title: "Motion",
+      description: "A Simple landing page for transactional data",
+      sourceLink: "https://github.com/hadi21k/Motion-website-Reactjs",
+      liveDemo: "https://motionn.netlify.app/",
+    },
+    dashboard: {
+      title: "Dashboard App",
+      description: "Clone Dashbaord ",
+      sourceLink: "https://github.com/hadi21k/Dashboard-app-react-tailwindcss",
+      liveDemo: "https://dashboard-appp.netlify.app/dashboard",
+    },
+    teslaClone: {
+      title: "Tesla Clone",
+      description: "Tesla Website clone",
+      sourceLink: "https://github.com/hadi21k/Tesla-Website-Clone",
+      liveDemo: "https://teslawebsitee-clone.netlify.app/",
+    },
+    cryptoMarket: {
+      title: "Crypto",
+      description: "Crypto Website for lively prices of coins",
+      sourceLink: "https://github.com/hadi21k/crypto-market-app-reactjs",
+      liveDemo: "https://cryptomarketappp.netlify.app/",
+    },
+    pomodoroTimer: {
+      title: "Pomodoro Timer",
+      description: "Pomodoro App Timer for studying using pomodoro method",
+      sourceLink: "https://github.com/hadi21k/pomodoro-timer-app-react",
+      liveDemo: "https://pomodoro-timer-appp.netlify.app/",
+    },
+  },
 };
 
 const dataSlice = createSlice({

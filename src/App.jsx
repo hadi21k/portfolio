@@ -4,7 +4,7 @@ import { Route, Routes, useLocation } from "react-router";
 import "./App.css";
 import Main from "./Components/Main";
 import NavBar from "./Components/NavBar";
-import WorkSection from "./Components/Works/WorkSection";
+import WorkPage from "./Components/Works/WorkPage";
 
 function App() {
   const location = useLocation();
@@ -15,7 +15,7 @@ function App() {
       <AnimatePresence exitBeforeEnter>
         <Routes location={location} key={location.key}>
           <Route path="/" element={<Main />} />
-          <Route path="/works" element={<WorkSection />} />
+          <Route path="/works" element={<WorkPage />} />
         </Routes>
       </AnimatePresence>
     </div>
