@@ -8,7 +8,7 @@ import { setDarkMode } from "../features/reducer";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 const NavBar = () => {
-  const [bg, setBg] = useState("navbarBg");
+  const [bg, setBg] = useState("dark:navbarBg bg-white");
   const divRef = useRef();
   const dispatch = useDispatch();
   const darkMode = useSelector((state) => state.data.darkMode);
