@@ -18,7 +18,7 @@ const WorkPage = () => {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
         exit={{ y: 20, opacity: 0 }}
-        className="container mx-auto lg:px-48"
+        className="container px-4 mx-auto md:px-0 lg:px-48"
       >
         <div className="flex items-center justify-center">
           <div className="text-[#FFCE45] mx-auto teko text-3xl border-b-4 border-[#6C757D] inline">
