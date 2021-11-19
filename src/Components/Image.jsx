@@ -10,7 +10,8 @@ const Image = () => {
         exit={{ y: 20, opacity: 0 }}
         src={Flame}
         alt="flame"
-        className="sm:w-[450px] w-[430px] h-[320px] sm:h-[330px]"
+        width="420px"
+        height="420px"
       />
     </div>
   );
