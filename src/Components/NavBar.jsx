@@ -1,11 +1,12 @@
 import { ChipIcon } from "@heroicons/react/solid";
 import { SunIcon, MoonIcon } from "@heroicons/react/outline";
-import { Link } from "react-router-dom";
 import { AiFillGithub } from "react-icons/ai";
 import { useEffect, useRef, useState } from "react";
 import SideMenu from "./SideMenu";
 import { useDispatch, useSelector } from "react-redux";
 import { setDarkMode } from "../features/reducer";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 const NavBar = () => {
   const [bg, setBg] = useState("navbarBg");
   const divRef = useRef();
@@ -27,7 +28,7 @@ const NavBar = () => {
   return (
     <div
       ref={divRef}
-      className={`h-[65px] teko fixed w-full left-0 top-0 backdrop-filter backdrop-blur-sm bg-opacity-70 ${bg}`}
+      className={`h-[65px] teko fixed w-full left-0 top-0 backdrop-filter backdrop-blur-lg z-10 bg-opacity-70 ${bg}`}
     >
       <div className="container relative z-10 flex items-center justify-between w-full h-full mx-auto">
         <Link to="/">
@@ -39,18 +40,21 @@ const NavBar = () => {
         <ul className="items-center flex-1 hidden px-16 space-x-4 text-lg text-white lists sm:flex">
           <Link to="/">
             <li className="transition-all duration-300 cursor-pointer hover:text-red-500">
+              <motion.div layoutId="underline" />
               About
             </li>
           </Link>
           <Link to="/works">
             <li className="transition-all duration-300 cursor-pointer hover:text-red-500 ">
+              <motion.div layoutId="underline" />
               Works
             </li>
           </Link>
           <li className="transition-all duration-300 cursor-pointer hover:text-red-500">
+            <motion.div layoutId="underline" />
             <a
               className="flex items-center space-x-1"
-              href="https://www.github.com/hadi21k"
+              href="https://github.com/hadi21k/portfolio"
               target="_blank"
               rel="noopener noreferrer"
             >

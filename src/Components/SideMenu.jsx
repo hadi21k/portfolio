@@ -53,7 +53,7 @@ const SideMenu = () => {
               </Menu.Item>
             </Link>
             <a
-              href="https://www.github.com/hadi21k"
+              href="https://github.com/hadi21k/portfolio"
               target="_blank"
               rel="noopener noreferrer"
             >
