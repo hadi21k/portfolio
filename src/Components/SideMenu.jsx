@@ -56,31 +56,25 @@ const SideMenu = () => {
                 )}
               </Menu.Item>
             </Link>
-            <a
-              href="https://github.com/hadi21k/portfolio"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Menu.Item
+              as="li"
+              href="#"
+              className="w-full text-xl h-[48px] flex items-center"
             >
-              <Menu.Item
-                as="li"
-                href="#"
-                className="w-full text-xl h-[48px] flex items-center"
-              >
-                {({ active }) => (
-                  <a
-                    href="https://github.com/hadi21k/portfolio"
-                    className={`flex transition-all duration-300 px-4 w-full h-full items-center space-x-1 ${
-                      active
-                        ? "dark:bg-[#ffc832] bg-red-400"
-                        : "dark:text-black text-white"
-                    }`}
-                  >
-                    <AiFillGithub className="w-[20px] h-[20px] " />
-                    <h1>Source</h1>
-                  </a>
-                )}
-              </Menu.Item>
-            </a>
+              {({ active }) => (
+                <a
+                  href="https://github.com/hadi21k/portfolio"
+                  className={`flex transition-all duration-300 px-4 w-full h-full items-center space-x-1 ${
+                    active
+                      ? "dark:bg-[#ffc832] bg-red-400"
+                      : "dark:text-black text-white"
+                  }`}
+                >
+                  <AiFillGithub className="w-[20px] h-[20px] " />
+                  <h1>Source</h1>
+                </a>
+              )}
+            </Menu.Item>
           </Menu.Items>
         </Transition>
       </Menu>
