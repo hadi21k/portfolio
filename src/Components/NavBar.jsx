@@ -5,9 +5,11 @@ import { useEffect, useRef, useState } from "react";
 import SideMenu from "./SideMenu";
 import { useDispatch, useSelector } from "react-redux";
 import { setDarkMode } from "../features/reducer";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 const NavBar = () => {
+  const location = useLocation();
   const [bg, setBg] = useState("dark:navbarBg bg-white");
   const divRef = useRef();
   const dispatch = useDispatch();
@@ -40,13 +42,11 @@ const NavBar = () => {
         <ul className="items-center flex-1 hidden px-16 space-x-4 text-lg lightTextMode dark:text-white lists sm:flex">
           <Link to="/">
             <li className="font-medium transition-all duration-300 cursor-pointer dark:hover:text-[#ffce45] hover:text-red-500">
-              <motion.div layoutId="underline" />
               About
             </li>
           </Link>
           <Link to="/works">
             <li className="transition-all duration-300 cursor-pointer hover:text-red-500 dark:hover:text-[#ffce45] font-medium">
-              <motion.div layoutId="underline" />
               Works
             </li>
           </Link>
@@ -63,23 +63,32 @@ const NavBar = () => {
           </li>
         </ul>
         <div className="flex items-center px-2 space-x-2 btns">
-          <div className="mode">
-            {darkMode ? (
-              <div
-                onClick={() => dispatch(setDarkMode())}
-                className="w-[40px] h-[40px] grid cursor-pointer place-items-center rounded-lg btnBg"
-              >
-                <SunIcon className="w-[20px] h-[20px]" />
-              </div>
-            ) : (
-              <div
-                onClick={() => dispatch(setDarkMode())}
-                className="w-[40px] cursor-pointer h-[40px] grid place-items-center bg-indigo-600 text-white transition-all duration-500 rounded-lg"
-              >
-                <MoonIcon className="w-[20px] h-[20px]" />
-              </div>
-            )}
-          </div>
+          <AnimatePresence exitBeforeEnter initial={false}>
+            <motion.div
+              key={darkMode}
+              initial={{ y: -20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: 20, opacity: 0 }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
+              className="mode"
+            >
+              {darkMode ? (
+                <div
+                  onClick={() => dispatch(setDarkMode())}
+                  className="w-[40px] h-[40px] grid cursor-pointer place-items-center rounded-lg btnBg"
+                >
+                  <SunIcon className="w-[20px] h-[20px]" />
+                </div>
+              ) : (
+                <div
+                  onClick={() => dispatch(setDarkMode())}
+                  className="w-[40px] cursor-pointer h-[40px] grid place-items-center bg-indigo-600 text-white transition-all duration-500 rounded-lg"
+                >
+                  <MoonIcon className="w-[20px] h-[20px]" />
+                </div>
+              )}
+            </motion.div>
+          </AnimatePresence>
           <SideMenu />
         </div>
       </div>

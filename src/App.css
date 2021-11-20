@@ -51,9 +51,9 @@
   left: 50%;
   width: 4px;
   height: 100%;
-  background-color: #ef4444;
   top: 0;
   transition: all 0.5s ease-in-out;
+  border-radius: 12px;
 }
 @media screen and (max-width: 640px) {
   .time-container::after {
