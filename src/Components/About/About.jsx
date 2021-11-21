@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import SocialSection from "../Social/SocialSection";
 import AboutSection from "./AboutSection";
-import BioSection from "./BioSection";
+import TimelineSection from "./TimelineSection";
 
 const About = () => {
   return (
@@ -16,11 +16,12 @@ const About = () => {
         <div className="py-2 text-xl font-medium text-center dark:text-[#111e27] dark:bg-white bg-red-500 text-white rounded sm:text-2xl teko">
           Hello, I’m a Front End Developer based in Lebanon.
         </div>
-        <div className="py-1 mt-2 text-2xl font-semibold text-left text-[#111e27] dark:text-white sm:text-3xl teko">
+        <div className="py-1 mt-2 text-2xl font-semibold text-left flex space-x-3 items-center text-[#111e27] dark:text-white sm:text-3xl teko">
           <h1>Hadi Diab</h1>
+          
         </div>
         <AboutSection />
-        <BioSection />
+        <TimelineSection />
         <SocialSection />
       </motion.div>
     </>
