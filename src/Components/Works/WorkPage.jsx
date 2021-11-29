@@ -19,8 +19,8 @@ const WorkPage = () => {
         exit={{ y: 20, opacity: 0 }}
         className="container px-8 mx-auto sm:px-0 lg:px-48"
       >
-        <div className="flex items-center justify-center">
-          <div className="dark:text-[#FFCE45] text-[#111e27] mx-auto teko text-3xl border-b-4 border-red-500 dark:border-[#6C757D] inline">
+        <div className="flex items-center justify-start py-1">
+          <div className="dark:text-[#FFCE45] text-[#111e27] teko text-3xl border-b-4 border-red-500 dark:border-[#6C757D]">
             Works
           </div>
         </div>
