@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const InputField = () => {
   const serviceId = "service_eiubci3";
-  const templateId = "template_xdmcazt"; 
+  const templateId = "template_xdmcazt";
   const userId = "user_d8DcekEisfi8mtui3Kt2C";
   const [isSending, setIsSending] = useState({
     isSending: false,
@@ -28,16 +28,16 @@ const InputField = () => {
         },
         userId
       );
-      console.log(result.text);
       setTimeout(() => {
         setIsSending({ ...isSending, sendingMessage: "Message Sent" });
       }, 1500);
       setEmail("");
       setTextArea("");
       setName("");
-      setIsSending({ ...isSending, sendingMessage: "Send Message" });
     } catch (err) {
-      console.error(err);
+      alert(err);
+    } finally {
+      setIsSending({ ...isSending, sendingMessage: "Send Message" });
     }
   };
   return (
