@@ -3,9 +3,9 @@ import emailjs from "emailjs-com";
 import { useState } from "react";
 
 const InputField = () => {
-  const serviceId = import.meta.env.VITE_APP_SERVICE_ID;
-  const templateId = import.meta.env.VITE_APP_TEMPLATE_ID;
-  const userId = import.meta.env.VITE_APP_USER_ID;
+  const serviceId = "service_eiubci3";
+  const templateId = "template_xdmcazt"; 
+  const userId = "user_d8DcekEisfi8mtui3Kt2C";
   const [isSending, setIsSending] = useState({
     isSending: false,
     sendingMessage: "Send Message",
@@ -44,12 +44,12 @@ const InputField = () => {
     <>
       <form
         onSubmit={sendMessage}
-        className="flex flex-col items-center justify-center h-auto mt-4 space-y-3 text-black"
+        className="flex flex-col w-full h-auto mt-4 space-y-3 text-black md:w-1/2"
       >
         <input
           {...nameAttributes}
           type="text"
-          className="w-full p-2 font-medium rounded-lg outline-none dark:placeholder-[#111e27] bg-red-500 dark:bg-[#ffce45] text-white dark:text-[#111e27] placeholder-white"
+          className="sm:w-full p-2 font-medium rounded-lg outline-none dark:placeholder-[#111e27] bg-red-500 dark:bg-[#ffce45] text-white dark:text-[#111e27] placeholder-white"
           placeholder="Your Name"
           id="from_name"
         />
