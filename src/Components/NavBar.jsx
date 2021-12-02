@@ -82,7 +82,7 @@ const NavBar = () => {
               ) : (
                 <div
                   onClick={() => dispatch(setDarkMode())}
-                  className="w-[40px] cursor-pointer h-[40px] grid place-items-center bg-indigo-600 text-white transition-all duration-500 rounded-lg"
+                  className="w-[40px] cursor-pointer h-[40px] grid place-items-center bg-purple-800 text-white transition-all duration-500 rounded-lg"
                 >
                   <MoonIcon className="w-[20px] h-[20px]" />
                 </div>
