@@ -12,7 +12,7 @@ const WorkSection = ({ workData, image }) => {
         <div className="relative img">
           <img src={image} alt={workData.title} className="rounded-lg" />
           <div
-            className={` space-x-2 dark:patter-red pattern-yellow left-0 w-full h-full absolute top-0 transition-all duration-500 rounded-lg flex items-center justify-center ${
+            className={` space-x-2 patter-red dark:pattern-yellow left-0 w-full h-full absolute top-0 transition-all duration-500 rounded-lg flex items-center justify-center ${
               sourceCode ? "opacity-1" : "opacity-0 "
             } `}
           >
