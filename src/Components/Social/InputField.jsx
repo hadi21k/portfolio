@@ -34,13 +34,10 @@ const InputField = () => {
       setName("");
     } catch (err) {
       alert(err);
-<<<<<<< HEAD
     } finally {
       setTimeout(() => {
         setIsSending({ ...isSending, sendingMessage: "Message Sent" });
       }, 1500);
-=======
->>>>>>> bdbc3142d924e14d613c516880dfd20ed4186888
     }
   };
   return (
