@@ -17,7 +17,7 @@ const InputField = () => {
     e.preventDefault();
     try {
       setIsSending({ isSending: true, sendingMessage: "Sending..." });
-      const result = await emailjs.send(
+      await emailjs.send(
         serviceId,
         templateId,
         {
@@ -34,31 +34,36 @@ const InputField = () => {
       setName("");
     } catch (err) {
       alert(err);
+<<<<<<< HEAD
     } finally {
       setTimeout(() => {
         setIsSending({ ...isSending, sendingMessage: "Message Sent" });
       }, 1500);
+=======
+>>>>>>> bdbc3142d924e14d613c516880dfd20ed4186888
     }
   };
   return (
     <>
       <form
         onSubmit={sendMessage}
-        className="flex flex-col w-full h-auto mt-4 space-y-3 text-black md:w-1/2"
+        className="flex flex-col w-full h-auto mt-6 space-y-3 text-black md:w-1/2"
       >
-        <input
-          {...nameAttributes}
-          type="text"
-          className="sm:w-full p-2 font-medium rounded-lg outline-none dark:placeholder-[#111e27] bg-red-500 dark:bg-[#ffce45] text-white dark:text-[#111e27] placeholder-white"
-          placeholder="Your Name"
-          id="from_name"
-        />
-        <input
-          {...emailAttributes}
-          type="email"
-          className="w-full p-2 font-medium rounded-lg outline-none dark:placeholder-[#111e27] bg-red-500 dark:bg-[#ffce45] text-white dark:text-[#111e27] placeholder-white"
-          placeholder="Email Address"
-        />
+        <div className="flex flex-col items-center space-x-0 space-y-3 sm:flex-row sm:space-x-4 sm:space-y-0">
+          <input
+            {...nameAttributes}
+            type="text"
+            className="sm:w-1/2 w-full p-2 font-medium rounded-lg outline-none dark:placeholder-[#111e27] bg-red-500 dark:bg-[#ffce45] text-white dark:text-[#111e27] placeholder-white"
+            placeholder="Your Name"
+            id="from_name"
+          />
+          <input
+            {...emailAttributes}
+            type="email"
+            className="sm:w-1/2 w-full p-2 font-medium rounded-lg outline-none dark:placeholder-[#111e27] bg-red-500 dark:bg-[#ffce45] text-white dark:text-[#111e27] placeholder-white"
+            placeholder="Email Address"
+          />
+        </div>
         <textarea
           name="textarea"
           cols="50"
