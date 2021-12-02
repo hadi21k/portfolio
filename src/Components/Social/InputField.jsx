@@ -28,16 +28,16 @@ const InputField = () => {
         },
         userId
       );
-      setTimeout(() => {
-        setIsSending({ ...isSending, sendingMessage: "Message Sent" });
-      }, 1500);
+      setIsSending({ ...isSending, sendingMessage: "Send Message" });
       setEmail("");
       setTextArea("");
       setName("");
     } catch (err) {
       alert(err);
     } finally {
-      setIsSending({ ...isSending, sendingMessage: "Send Message" });
+      setTimeout(() => {
+        setIsSending({ ...isSending, sendingMessage: "Message Sent" });
+      }, 1500);
     }
   };
   return (
