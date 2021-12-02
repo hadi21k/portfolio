@@ -37,7 +37,6 @@ const WorkPage = () => {
             image={pomodoroImage}
           />
         </div>
-        <SocialSection />
       </motion.div>
     </div>
   );
