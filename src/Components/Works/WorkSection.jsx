@@ -12,13 +12,13 @@ const WorkSection = ({ workData, image }) => {
         <div className="relative img">
           <img src={image} alt={workData.title} className="rounded-lg" />
           <div
-            className={` space-x-2 patter-red dark:pattern-yellow left-0 w-full h-full absolute top-0 transition-all duration-500 rounded-lg flex items-center justify-center ${
+            className={` space-x-2 patter-red dark:pattern-yellow w-full h-full absolute inset-0 transition-all duration-500 rounded-lg flex items-center justify-center ${
               sourceCode ? "opacity-1" : "opacity-0 "
             } `}
           >
             <a
               href={workData.sourceLink}
-              className="flex items-center space-x-1 text-xl dark:bg-[#ffce45] bg-red-500 transition-all duration-500 rounded-lg px-2 py-1 font-semibold text-black teko"
+              className="flex items-center space-x-1 text-xl bg-[#f0e7db] transition-all duration-500 rounded-lg px-2 py-1 font-semibold text-[#111e27] teko"
               rel="noopener noreferrer"
               target="_blank"
             >
@@ -27,7 +27,7 @@ const WorkSection = ({ workData, image }) => {
             </a>
             <a
               href={workData.liveDemo}
-              className="flex items-center dark:bg-[#ffce45] bg-red-500 px-2 py-1 text-xl rounded-lg space-x-1 font-semibold text-black teko"
+              className="flex items-center bg-[#f0e7db] px-2 py-1 text-xl rounded-lg space-x-1 font-semibold text-[#111e27] teko"
               rel="noopener noreferrer"
               target="_blank"
             >
