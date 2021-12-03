@@ -15,6 +15,10 @@ const InputField = () => {
   const [name, nameAttributes, setName] = useInput();
   const sendMessage = async (e) => {
     e.preventDefault();
+    if (name.length === 0 || email.length === 0 || textArea.length === 0) {
+      alert("Please fill all the fields");
+      return;
+    }
     try {
       setIsSending({ isSending: true, sendingMessage: "Sending..." });
       await emailjs.send(
@@ -28,16 +32,13 @@ const InputField = () => {
         },
         userId
       );
+    } catch (err) {
+      alert(err);
+    } finally {
       setIsSending({ ...isSending, sendingMessage: "Send Message" });
       setEmail("");
       setTextArea("");
       setName("");
-    } catch (err) {
-      alert(err);
-    } finally {
-      setTimeout(() => {
-        setIsSending({ ...isSending, sendingMessage: "Message Sent" });
-      }, 1500);
     }
   };
   return (

@@ -24,7 +24,7 @@ const WorkPage = () => {
             Works
           </div>
         </div>
-        <div className="grid grid-cols-1 gap-12 mt-10 sm:grid-cols-2 xl:grid-cols-2 website-works-on">
+        <div className="grid grid-cols-1 gap-12 mt-10 sm:grid-cols-2 website-works-on">
           <WorkSection workData={worksData.motion} image={motionImage} />
           <WorkSection workData={worksData.dashboard} image={dashboardImage} />
           <WorkSection
