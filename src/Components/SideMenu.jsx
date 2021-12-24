@@ -21,17 +21,17 @@ const SideMenu = () => {
         >
           <Menu.Items
             as="ul"
-            className="absolute flex flex-col bottom-[-200px] h-[200px] w-[200px] right-5 outline-none rounded-lg justify-around dark:bg-[#ffce45] bg-red-500 "
+            className="absolute flex flex-col bottom-[-150px] h-[150px] w-[200px] right-5 outline-none rounded-lg justify-around dark:bg-[#ffce45] bg-red-500 "
           >
             <Link to="/">
-              <Menu.Item as="li" className="h-[48px] w-full text-lg">
+              <Menu.Item as="li" className="h-[48px] w-full">
                 {({ active }) => (
                   <h1
                     className={`${
                       active
                         ? "dark:bg-[#ffc832] bg-red-400"
                         : "dark:text-black text-white"
-                    } w-full h-full flex items-center px-4 transition-all duration-300`}
+                    } w-full h-full flex items-center px-4 rounded-lg text-sm font-bold transition-all duration-300`}
                   >
                     About
                   </h1>
@@ -39,38 +39,31 @@ const SideMenu = () => {
               </Menu.Item>
             </Link>
             <Link to="/works">
-              <Menu.Item
-                as="li"
-                className="h-[48px] w-full text-lg flex items-center"
-              >
+              <Menu.Item as="li" className="h-[48px] w-full">
                 {({ active }) => (
                   <h1
                     className={`${
                       active
                         ? "dark:bg-[#ffc832] bg-red-400"
                         : "dark:text-black text-white"
-                    }  w-full h-full flex items-center px-4 transition-all duration-300`}
+                    }  w-full h-full flex items-center px-4 rounded-lg text-sm transition-all font-bold duration-300`}
                   >
                     Works
                   </h1>
                 )}
               </Menu.Item>
             </Link>
-            <Menu.Item
-              as="li"
-              href="#"
-              className="w-full text-lg h-[48px] flex items-center"
-            >
+            <Menu.Item as="li" href="#" className="w-full h-[48px]">
               {({ active }) => (
                 <a
                   href="https://github.com/hadi21k/portfolio"
-                  className={`flex transition-all duration-300 px-4 w-full h-full items-center space-x-1 ${
+                  className={`flex transition-all duration-300 rounded-lg text-sm font-bold px-4 w-full h-full items-center space-x-1 ${
                     active
                       ? "dark:bg-[#ffc832] bg-red-400"
                       : "dark:text-black text-white"
                   }`}
                 >
-                  <AiFillGithub className="w-[20px] h-[20px] " />
+                  <AiFillGithub className="w-[16px] h-[16px]" />
                   <h1>Source</h1>
                 </a>
               )}

@@ -20,22 +20,16 @@ const WorkPage = () => {
         className="container px-8 mx-auto sm:px-0 lg:px-48"
       >
         <div className="flex items-center justify-start py-1">
-          <div className="dark:text-[#FFCE45] text-[#111e27] teko text-3xl border-b-4 border-red-500 dark:border-[#6C757D]">
+          <div className="dark:text-[#FFCE45] text-[#111e27] notoSans text-xl border-b-4 border-red-500 dark:border-[#6C757D]">
             Works
           </div>
         </div>
         <div className="grid grid-cols-1 gap-12 mt-10 sm:grid-cols-2 website-works-on">
           <WorkSection workData={worksData.motion} image={motionImage} />
           <WorkSection workData={worksData.dashboard} image={dashboardImage} />
-          <WorkSection
-            workData={worksData.teslaClone}
-            image={teslaCloneImage}
-          />
+          <WorkSection workData={worksData.teslaClone} image={teslaCloneImage} />
           <WorkSection workData={worksData.cryptoMarket} image={cryptoImage} />
-          <WorkSection
-            workData={worksData.pomodoroTimer}
-            image={pomodoroImage}
-          />
+          <WorkSection workData={worksData.pomodoroTimer} image={pomodoroImage} />
         </div>
       </motion.div>
     </div>
