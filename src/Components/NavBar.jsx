@@ -30,27 +30,27 @@ const NavBar = () => {
   return (
     <div
       ref={divRef}
-      className={`h-[65px] teko fixed w-full left-0 top-0 backdrop-filter backdrop-blur-lg z-10 bg-opacity-70 ${bg}`}
+      className={`h-[65px] notoSans fixed w-full left-0 top-0 backdrop-filter backdrop-blur-lg z-10 bg-opacity-70 ${bg}`}
     >
       <div className="container relative z-10 flex items-center justify-between w-full h-full mx-auto">
         <Link to="/">
           <div className="flex items-center px-2 space-x-1 font-semibold cursor-pointer lightTextMode dark:text-white logo group">
             <ChipIcon className="w-6 h-6 transition-all transform rotate-[-45deg] group-hover:rotate-0 duration-300" />
-            <h1 className="text-2xl">Hadi</h1>
+            <h1 className="text-xl">Hadi</h1>
           </div>
         </Link>
         <ul className="items-center flex-1 hidden px-16 space-x-4 text-lg lightTextMode dark:text-white lists sm:flex">
           <Link to="/">
-            <li className="font-medium transition-all duration-300 cursor-pointer dark:hover:text-[#ffce45] hover:text-red-500">
+            <li className="transition-all font-bold text-sm duration-300 cursor-pointer dark:hover:text-[#ffce45] hover:text-red-500">
               About
             </li>
           </Link>
           <Link to="/works">
-            <li className="transition-all duration-300 cursor-pointer hover:text-red-500 dark:hover:text-[#ffce45] font-medium">
+            <li className="transition-all font-bold text-sm duration-300 cursor-pointer hover:text-red-500 dark:hover:text-[#ffce45]">
               Works
             </li>
           </Link>
-          <li className="transition-all duration-300 cursor-pointer hover:text-red-500 dark:hover:text-[#ffce45] font-medium">
+          <li className="transition-all font-bold text-sm duration-300 cursor-pointer hover:text-red-500 dark:hover:text-[#ffce45]">
             <a
               className="flex items-center space-x-1"
               href="https://github.com/hadi21k/portfolio"

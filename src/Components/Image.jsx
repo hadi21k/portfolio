@@ -1,17 +1,17 @@
 import { motion } from "framer-motion";
-import Flame from "../Assets/3d-flame-278.webp";
+import Me from "../Assets/me .webp"
 const Image = () => {
   return (
-    <div className="w-full img h-[340px] grid place-items-center">
+    <div className="w-full img h-[430px] grid place-items-center overflow-y-hidden">
       <motion.img
         initial={{ y: -20, opacity: 0 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
         exit={{ y: 20, opacity: 0 }}
-        src={Flame}
+        src={Me}
         alt="flame"
-        width="420px"
-        height="420px"
+        width="150px"
+        height="150px"
       />
     </div>
   );

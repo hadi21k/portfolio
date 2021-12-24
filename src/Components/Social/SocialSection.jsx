@@ -8,7 +8,7 @@ import InputField from "./InputField";
 const SocialSection = () => {
   return (
     <div className="flex flex-col items-start py-6 pb-4 mt-3 firaSans">
-      <div className="dark:text-[#FFCE45] text-[#111e27] teko text-3xl border-b-4 border-red-500 dark:border-[#6C757D] text-center sm:mx-auto">
+      <div className="dark:text-[#FFCE45] text-[#111e27] notoSans text-2xl border-b-4 border-red-500 dark:border-[#6C757D] text-center sm:mx-auto">
         Connect with Me
       </div>
       <div className="flex items-center justify-center w-full">

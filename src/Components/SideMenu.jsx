@@ -21,10 +21,10 @@ const SideMenu = () => {
         >
           <Menu.Items
             as="ul"
-            className="absolute flex flex-col bottom-[-200px] h-[200px] w-[200px] right-5 outline-none rounded-lg justify-between py-2 dark:bg-[#ffce45] bg-red-500 "
+            className="absolute flex flex-col bottom-[-200px] h-[200px] w-[200px] right-5 outline-none rounded-lg justify-around dark:bg-[#ffce45] bg-red-500 "
           >
             <Link to="/">
-              <Menu.Item as="li" className="h-[48px] w-full text-xl">
+              <Menu.Item as="li" className="h-[48px] w-full text-lg">
                 {({ active }) => (
                   <h1
                     className={`${
@@ -41,7 +41,7 @@ const SideMenu = () => {
             <Link to="/works">
               <Menu.Item
                 as="li"
-                className="h-[48px] w-full text-xl flex items-center"
+                className="h-[48px] w-full text-lg flex items-center"
               >
                 {({ active }) => (
                   <h1
@@ -59,7 +59,7 @@ const SideMenu = () => {
             <Menu.Item
               as="li"
               href="#"
-              className="w-full text-xl h-[48px] flex items-center"
+              className="w-full text-lg h-[48px] flex items-center"
             >
               {({ active }) => (
                 <a

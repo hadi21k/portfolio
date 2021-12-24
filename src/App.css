@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;600;700&family=Teko:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -15,13 +15,13 @@
   --mainLightBg: #f0e7db;
   --lightTextMode: #111e27;
   --btnBg: #ffce45;
-  --tekoFont: "Teko", sans-serif;
+  --notoSans: "Noto Sans", sans-serif;
   --firaSans: "Fira Sans", sans-serif;
 }
 
 @layer base {
-  .teko {
-    font-family: var(--tekoFont);
+  .notoSans {
+    font-family: var(--notoSans);
     font-display: swap;
   }
   .firaSans {
