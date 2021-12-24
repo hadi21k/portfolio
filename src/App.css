@@ -5,8 +5,14 @@
 @tailwind utilities;
 
 ::-webkit-scrollbar {
-  height: 2px;
-  width: 2px;
+  width: 5px;
+}
+::-webkit-scrollbar-thumb{
+  background: #6c6c6f;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #111e27;
 }
 
 :root {
