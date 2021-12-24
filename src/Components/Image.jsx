@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import Me from "../Assets/me .webp"
 const Image = () => {
   return (
-    <div className="w-full img h-[430px] grid place-items-center overflow-y-hidden">
+    <div className="w-full img h-[450px] grid place-items-center overflow-y-hidden">
       <motion.img
         initial={{ y: -20, opacity: 0 }}
         animate={{ opacity: 1, y: 0 }}

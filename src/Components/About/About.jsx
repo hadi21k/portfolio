@@ -11,7 +11,7 @@ const About = () => {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
         exit={{ y: 20, opacity: 0 }}
-        className="container px-3 mx-auto mt-6 sm:px-0"
+        className="container px-4 mx-auto mt-6 sm:px-16"
       >
         <div className="py-2 font-medium notoSans text-center dark:text-[#111e27] dark:bg-white bg-red-500 text-white rounded sm:text-2xl">
           <p className="text-sm font-bold">
