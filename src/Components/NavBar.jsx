@@ -1,4 +1,4 @@
-import { ChipIcon } from "@heroicons/react/solid";
+import chipIcon from "../Assets/icons8-chip-60 (1).webp";
 import { SunIcon, MoonIcon } from "@heroicons/react/outline";
 import { AiFillGithub } from "react-icons/ai";
 import { useEffect, useRef, useState } from "react";
@@ -34,8 +34,11 @@ const NavBar = () => {
     >
       <div className="container relative z-10 flex items-center justify-between w-full h-full mx-auto sm:px-16">
         <Link to="/">
-          <div className="flex items-center px-2 space-x-1 font-semibold cursor-pointer lightTextMode dark:text-white logo group">
-            <ChipIcon className="w-6 h-6 transition-all transform rotate-[-45deg] group-hover:rotate-0 duration-300" />
+          <div className="flex items-center px-2 space-x-2 font-semibold cursor-pointer lightTextMode dark:text-white logo group">
+            <img
+              src={chipIcon}
+              className="w-5 h-5 transition-all transform rotate-[-45deg] group-hover:rotate-0 duration-300"
+            />
             <h1 className="text-xl font-semibold">Hadi</h1>
           </div>
         </Link>
