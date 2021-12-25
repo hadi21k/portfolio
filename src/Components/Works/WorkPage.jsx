@@ -15,7 +15,7 @@ const WorkPage = () => {
       <motion.div
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.5, ease: "easeInOut" }}
+        transition={{ duration: 0.5, ease: "easeInOut", delay: 0.3 }}
         exit={{ y: 20, opacity: 0 }}
         className="container px-8 mx-auto sm:px-0 lg:px-48"
       >
@@ -27,9 +27,15 @@ const WorkPage = () => {
         <div className="grid grid-cols-1 gap-12 mt-10 sm:grid-cols-2 website-works-on">
           <WorkSection workData={worksData.motion} image={motionImage} />
           <WorkSection workData={worksData.dashboard} image={dashboardImage} />
-          <WorkSection workData={worksData.teslaClone} image={teslaCloneImage} />
+          <WorkSection
+            workData={worksData.teslaClone}
+            image={teslaCloneImage}
+          />
           <WorkSection workData={worksData.cryptoMarket} image={cryptoImage} />
-          <WorkSection workData={worksData.pomodoroTimer} image={pomodoroImage} />
+          <WorkSection
+            workData={worksData.pomodoroTimer}
+            image={pomodoroImage}
+          />
         </div>
       </motion.div>
     </div>
