@@ -20,7 +20,7 @@ const WorkPage = () => {
         className="container px-8 mx-auto sm:px-0 lg:px-48"
       >
         <div className="flex items-center justify-start py-1">
-          <div className="dark:text-[#FFCE45] text-[#111e27] notoSans text-xl border-b-4 border-red-500 dark:border-[#6C757D]">
+          <div className="dark:text-[#FFCE45] text-[#111e27] text-xl border-b-4 font-semibold border-red-500 dark:border-[#6C757D]">
             Works
           </div>
         </div>

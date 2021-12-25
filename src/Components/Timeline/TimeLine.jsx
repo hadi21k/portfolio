@@ -7,7 +7,7 @@ const TimeLine = () => {
     <div className="relative pb-4 mt-6 firaSans">
       <div className="flex flex-col items-start space-y-4 time-container after:bg-red-500 dark:after:!bg-[#ffce45]">
         {data?.map((data, index) => (
-          <TimeLineItem key={index} data={data} />
+          <TimeLineItem odd={index} key={index} data={data} />
         ))}
       </div>
     </div>

@@ -30,13 +30,13 @@ const NavBar = () => {
   return (
     <div
       ref={divRef}
-      className={`h-[65px] notoSans fixed w-full left-0 top-0 backdrop-filter backdrop-blur-lg z-10 bg-opacity-70 ${bg}`}
+      className={`h-[65px] fixed w-full left-0 top-0 backdrop-filter backdrop-blur-lg z-10 bg-opacity-70 ${bg}`}
     >
-      <div className="container relative z-10 flex items-center justify-between w-full h-full px-4 mx-auto sm:px-16">
+      <div className="container relative z-10 flex items-center justify-between w-full h-full mx-auto sm:px-16">
         <Link to="/">
           <div className="flex items-center px-2 space-x-1 font-semibold cursor-pointer lightTextMode dark:text-white logo group">
             <ChipIcon className="w-6 h-6 transition-all transform rotate-[-45deg] group-hover:rotate-0 duration-300" />
-            <h1 className="text-xl">Hadi</h1>
+            <h1 className="text-xl font-semibold">Hadi</h1>
           </div>
         </Link>
         <ul className="items-center flex-1 hidden px-16 space-x-4 text-lg lightTextMode dark:text-white lists sm:flex">

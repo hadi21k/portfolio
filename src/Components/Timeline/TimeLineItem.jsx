@@ -1,10 +1,14 @@
-const TimeLineItem = ({ data, index }) => {
+const TimeLineItem = ({ data, index, odd }) => {
   return (
     <div
       key={index}
-      className="relative flex w-full px-5 transition-all duration-500 sm:px-0 sm:justify-center sm:w-1/2 timeline-item "
+      className="relative flex w-full px-5 transition-all duration-500 sm:px-0 sm:justify-center sm:w-1/2 timeline-item overflow-x-hidden"
     >
-      <div className="h-full text-sm sm:text-lg border-2 border-[#111e27] dark:border-white text-[#111e27] font-medium dark:text-[#ffce45] w-[90%] py-4 px-3 rounded relative">
+      <div
+        className={`h-full text-sm sm:text-base relative border-2 border-[#111e27] dark:border-white text-[#111e27] font-semibold dark:text-[#ffce45] w-[90%] py-4 px-3 rounded sm:before:block before:hidden before:absolute before:top-1/2 before:bg-[#111e27] dark:before:bg-white ${
+          odd % 2 === 0 ? "before:left-[-32px]" : "before:right-[-32px]"
+        } before:w-8 before:h-[2px]`}
+      >
         <span className="absolute top-1/2 sm:hidden w-[20px] h-[2px] bg-[#111e27] dark:bg-white left-[-20px]"></span>
         <h1>{data.year}</h1>
         <h3 className="flex-1">{data.description}</h3>

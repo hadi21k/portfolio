@@ -51,14 +51,14 @@ const InputField = () => {
           <input
             {...nameAttributes}
             type="text"
-            className="sm:w-1/2 w-full p-2 rounded-lg outline-none dark:placeholder-[#111e27] bg-red-500 dark:bg-[#ffce45] text-white dark:text-[#111e27] placeholder-white"
+            className="sm:w-1/2 w-full p-2 rounded-lg outline-none text-sm font-semibold dark:placeholder-[#111e27] bg-red-500 dark:bg-[#ffce45] text-white dark:text-[#111e27] placeholder-white"
             placeholder="Your Name"
             id="from_name"
           />
           <input
             {...emailAttributes}
             type="email"
-            className="sm:w-1/2 w-full p-2 rounded-lg outline-none dark:placeholder-[#111e27] bg-red-500 dark:bg-[#ffce45] text-white dark:text-[#111e27] placeholder-white"
+            className="sm:w-1/2 w-full p-2 rounded-lg outline-none text-sm font-semibold dark:placeholder-[#111e27] bg-red-500 dark:bg-[#ffce45] text-white dark:text-[#111e27] placeholder-white"
             placeholder="Email Address"
           />
         </div>
@@ -67,13 +67,13 @@ const InputField = () => {
           cols="50"
           rows="10"
           placeholder="Your Message"
-          className="p-2 rounded-lg outline-none dark:placeholder-[#111e27] bg-red-500 dark:bg-[#ffce45] placeholder-white text-white dark:text-[#111e27]"
+          className="p-2 rounded-lg outline-none text-sm font-semibold dark:placeholder-[#111e27] bg-red-500 dark:bg-[#ffce45] placeholder-white text-white dark:text-[#111e27]"
           id="message"
           {...textAreaAttributes}
         />
         <input
           type="submit"
-          className="w-full py-2 bg-red-500 rounded-lg dark:bg-[#ffce45] font-semibold text-white dark:text-[#111e27] cursor-pointer"
+          className="w-full py-2 bg-red-500 rounded-lg text-sm dark:bg-[#ffce45] font-semibold text-white dark:text-[#111e27] cursor-pointer"
           value={isSending.sendingMessage}
         />
       </form>
