@@ -30,7 +30,7 @@ const NavBar = () => {
   return (
     <div
       ref={divRef}
-      className={`h-[65px] fixed w-full left-0 top-0 backdrop-filter backdrop-blur-lg z-10 bg-opacity-70 ${bg}`}
+      className={`h-[65px] fixed w-full left-0 top-0 backdrop-filter backdrop-blur-lg z-30 bg-opacity-70 ${bg}`}
     >
       <div className="container relative z-10 flex items-center justify-between w-full h-full mx-auto sm:px-16">
         <Link to="/">
