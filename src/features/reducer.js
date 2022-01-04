@@ -10,6 +10,12 @@ const initialState = {
     { year: "2024", description: "Finish Computer sceince degree" },
   ],
   works: {
+    cryptoVerse: {
+      title: "CryptoVerse",
+      description: "A cryptocurrency market tracker",
+      sourceLink: "https://github.com/hadi21k/cryptomarket-app",
+      liveDemo: "https://coinmarket.vercel.app",
+    },
     motion: {
       title: "Motion",
       description: "A Simple landing page for transactional data",
