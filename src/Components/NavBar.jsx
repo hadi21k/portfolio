@@ -9,7 +9,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 const NavBar = () => {
-  const location = useLocation();
   const [bg, setBg] = useState("dark:navbarBg bg-white");
   const divRef = useRef();
   const dispatch = useDispatch();
@@ -75,16 +74,22 @@ const NavBar = () => {
               transition={{ duration: 0.2, ease: "easeInOut" }}
               className="mode"
             >
-              {darkMode ? (
+              {localStorage.getItem("darkMode") === "true" ? (
                 <div
-                  onClick={() => dispatch(setDarkMode())}
+                  onClick={() => {
+                    dispatch(setDarkMode());
+                    localStorage.setItem("darkMode", "false");
+                  }}
                   className="w-[40px] h-[40px] grid cursor-pointer place-items-center rounded-lg btnBg"
                 >
                   <SunIcon className="w-[20px] h-[20px]" />
                 </div>
               ) : (
                 <div
-                  onClick={() => dispatch(setDarkMode())}
+                  onClick={() => {
+                    dispatch(setDarkMode());
+                    localStorage.setItem("darkMode", "true");
+                  }}
                   className="w-[40px] cursor-pointer h-[40px] grid place-items-center bg-purple-800 text-white transition-all duration-500 rounded-lg"
                 >
                   <MoonIcon className="w-[20px] h-[20px]" />

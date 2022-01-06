@@ -10,7 +10,11 @@ function App() {
   const location = useLocation();
   const darkMode = useSelector((state) => state.data.darkMode);
   return (
-    <div className={`${darkMode ? "dark" : ""} openSans`}>
+    <div
+      className={`${
+        localStorage.getItem("darkMode") === "true" ? "dark" : ""
+      } openSans`}
+    >
       <NavBar />
       <AnimatePresence exitBeforeEnter>
         <Routes location={location} key={location.key}>

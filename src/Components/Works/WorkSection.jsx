@@ -1,59 +1,77 @@
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, useViewportScroll } from "framer-motion";
 import { useState } from "react";
-import { AiFillGithub } from "react-icons/ai";
-import { BsTextIndentRight, BsTextIndentLeft } from "react-icons/bs";
+import { useSelector } from "react-redux";
 
 const WorkSection = ({ workData, image }) => {
-  const [sourceCode, setSourceCode] = useState(false);
+  const worksData = useSelector((state) => state.data.works);
+  const [isOpen, setIsOpen] = useState(false);
+  const closeDetails = (i) => {
+    worksData.map(({ id }) => {
+      id == i ? setIsOpen(false) : null;
+      console.log(id);
+      console.log(i);
+    });
+  };
+  const openDetails = (i) => {
+    worksData.map((data) => {
+      data.id == i ? setIsOpen(true) : null;
+    });
+  };
   return (
     <>
-      <div className="overflow-hidden">
-        <div className="relative  img">
-          <div
-            onClick={() => setSourceCode((prev) => !prev)}
-            className={`absolute z-10 rounded cursor-pointer h-[20px] w-[20px] grid top-0 place-items-center transition-all duration-500 dark:bg-[#ffce45] bg-red-500 text-white dark:text-[#111e27] ${
-              sourceCode ? "right-[calc(100%-20px)]" : "right-0"
-            }`}
-          >
-            {sourceCode ? (
-              <BsTextIndentLeft className="w-5 h-5" />
-            ) : (
-              <BsTextIndentRight className="w-5 h-5" />
-            )}
-          </div>
-          <img src={image} alt={workData.title} className="rounded-lg" />
-          <div
-            className={` space-x-2 pattern-red dark:pattern-yellow w-full top-0 h-full absolute transition-all duration-500 rounded-lg flex items-center notoSans justify-center ${
-              sourceCode ? "right-0" : "-right-full"
-            } `}
-          >
-            <a
-              href={workData.sourceLink}
-              className="flex items-center space-x-1 text-sm bg-[#f0e7db] transition-all duration-500 rounded-lg px-2 py-1 font-bold text-[#111e27]"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <AiFillGithub />
-              <h1>Source Code</h1>
-            </a>
-            <a
-              href={workData.liveDemo}
-              className="flex items-center bg-[#f0e7db] text-sm px-2 py-1 rounded-lg space-x-1 font-bold text-[#111e27]"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <h1>Live Demo</h1>
-            </a>
-          </div>
-        </div>
-        <div className="py-1 text-center notoSans">
-          <div className="text-xl text-[#111e27] dark:text-[#ffce45] font-semibold mt-2">
-            <h1>{workData.title}</h1>
-          </div>
-          <div className="py-2 text-red-500 dark:text-white description">
-            <p className="text-sm font-bold">{workData.description}</p>
-          </div>
-        </div>
+      <div className="grid grid-cols-1 gap-12 mt-10 sm:grid-cols-2 overflow-hidden">
+        {worksData.map(
+          ({ title, description, sourceLink, liveDemo, image, id }) => (
+            <div key={id} className="relative">
+              <AnimatePresence exitBeforeEnter>
+                <motion.div
+                  onClick={() => closeDetails(id)}
+                  key={isOpen}
+                  initial={{ x: -100, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ duration: 0.4 }}
+                  exit={{ x: 100, opacity: 0 }}
+                  className={`rounded dark:pattern-yellow cursor-pointer pattern-red place-items-center absolute inset-0 w-full h-full ${
+                    isOpen ? "grid" : "hidden"
+                  } `}
+                >
+                  <div className="flex items-center space-x-4">
+                    <a
+                      href={liveDemo}
+                      target="_blank"
+                      className="dark:bg-[#ffce45] text-white dark:text-[#111e27] font-bold rounded py-1 px-2 sm:p-1 text-base sm:text-sm bg-red-500"
+                    >
+                      Live Demo
+                    </a>
+                    <a
+                      href={sourceLink}
+                      target="_blank"
+                      className="dark:bg-[#ffce45] text-white dark:text-[#111e27] font-bold rounded sm:p-1 text-base sm:text-sm py-1 px-2 bg-red-500"
+                    >
+                      Source Code
+                    </a>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+              <div className="img cursor-pointer">
+                <img
+                  onClick={() => openDetails(id)}
+                  src={image}
+                  alt={title}
+                  className="rounded-lg"
+                />
+              </div>
+              <div className="py-1 text-center hidden">
+                <div className="text-xl text-[#111e27] dark:text-[#ffce45] font-semibold mt-2">
+                  <h1>{title}</h1>
+                </div>
+                <div className="py-2 text-red-500 dark:text-white description">
+                  <p className="text-sm font-bold">{description}</p>
+                </div>
+              </div>
+            </div>
+          )
+        )}
       </div>
     </>
   );
