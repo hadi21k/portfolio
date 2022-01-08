@@ -6,13 +6,13 @@ const WorkSection = () => {
   const worksData = useSelector((state) => state.data.works);
   const [isOpen, setIsOpen] = useState(false);
   const closeDetails = (i) => {
-    worksData.filter(({ id }) => {
-      return id === i && setIsOpen(false);
+    worksData.map(({ id }) => {
+      id === i && setIsOpen(false);
     });
   };
   const openDetails = (i) => {
-    worksData.filter(({ id }) => {
-      return id === i && setIsOpen(true);
+    worksData.map(({ id }) => {
+      id === i && setIsOpen(true);
     });
   };
   return (
