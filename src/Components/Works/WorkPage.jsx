@@ -8,7 +8,7 @@ const WorkPage = () => {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, ease: "easeInOut", delay: 0.3 }}
         exit={{ y: 20, opacity: 0 }}
-        className="container md:px-16 px-3 mx-auto"
+        className="container sm:px-16 px-3 mx-auto"
       >
         <div className="flex items-center justify-start py-1">
           <div className="dark:text-[#FFCE45] text-[#111e27] text-xl border-b-4 font-semibold border-red-500 dark:border-[#6C757D]">

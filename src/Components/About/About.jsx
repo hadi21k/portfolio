@@ -15,7 +15,7 @@ const About = () => {
       >
         <div className="py-2 font-medium text-center dark:text-[#111e27] dark:bg-white bg-red-500 text-white rounded">
           <p className="text-sm font-bold sm:text-base">
-            Hello, I’m a Front End Developer based in Lebanon.
+            Hello, I'm a Front End Developer based in Lebanon.
           </p>
         </div>
         <div className="mt-2 text-left flex space-x-3 items-center text-[#111e27] dark:text-white">

@@ -2,24 +2,22 @@ import { AnimatePresence, motion, useViewportScroll } from "framer-motion";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 
-const WorkSection = ({ workData, image }) => {
+const WorkSection = () => {
   const worksData = useSelector((state) => state.data.works);
   const [isOpen, setIsOpen] = useState(false);
   const closeDetails = (i) => {
-    worksData.map(({ id }) => {
-      id == i ? setIsOpen(false) : null;
-      console.log(id);
-      console.log(i);
+    worksData.filter(({ id }) => {
+      return id === i && setIsOpen(false);
     });
   };
   const openDetails = (i) => {
-    worksData.map((data) => {
-      data.id == i ? setIsOpen(true) : null;
+    worksData.filter(({ id }) => {
+      return id === i && setIsOpen(true);
     });
   };
   return (
     <>
-      <div className="grid grid-cols-1 gap-12 mt-10 sm:grid-cols-2 overflow-hidden">
+      <div className="grid grid-cols-1 gap-12 mt-10 overflow-hidden sm:grid-cols-2 lg:grid-cols-3">
         {worksData.map(
           ({ title, description, sourceLink, liveDemo, image, id }) => (
             <div key={id} className="relative">
@@ -53,7 +51,7 @@ const WorkSection = ({ workData, image }) => {
                   </div>
                 </motion.div>
               </AnimatePresence>
-              <div className="img cursor-pointer">
+              <div className="cursor-pointer img">
                 <img
                   onClick={() => openDetails(id)}
                   src={image}
@@ -61,7 +59,7 @@ const WorkSection = ({ workData, image }) => {
                   className="rounded-lg"
                 />
               </div>
-              <div className="py-1 text-center hidden">
+              <div className="hidden py-1 text-center">
                 <div className="text-xl text-[#111e27] dark:text-[#ffce45] font-semibold mt-2">
                   <h1>{title}</h1>
                 </div>
