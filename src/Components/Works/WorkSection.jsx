@@ -17,21 +17,21 @@ const WorkSection = () => {
   };
   return (
     <>
-      <div className="grid grid-cols-1 gap-12 mt-10 overflow-hidden sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-12 mt-6 overflow-hidden sm:grid-cols-2 lg:grid-cols-3">
         {worksData.map(
           ({ title, description, sourceLink, liveDemo, image, id }) => (
             <motion.div
               key={id}
               initial={{
                 opacity: 0,
-                y: -20
+                y: -50,
               }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{
                 duration: 0.5,
                 ease: "easeInOut",
-                delay: id * 0.4,
+                delay: id * 0.5,
               }}
               className="relative"
             >

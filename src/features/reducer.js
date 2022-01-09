@@ -37,7 +37,7 @@ const initialState = {
       title: "Dashboard App",
       description: "Clone Dashbaord ",
       sourceLink: "https://github.com/hadi21k/Dashboard-app-react-tailwindcss",
-      liveDemo: "https://dashboard-appp.netlify.app/dashboard",
+      liveDemo: "https://dashboard-appp.netlify.app/",
       image: dashboardImage,
       id: 3,
     },
