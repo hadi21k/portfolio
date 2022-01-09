@@ -1,4 +1,4 @@
-import { AnimatePresence, motion, useViewportScroll } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 
@@ -20,7 +20,21 @@ const WorkSection = () => {
       <div className="grid grid-cols-1 gap-12 mt-10 overflow-hidden sm:grid-cols-2 lg:grid-cols-3">
         {worksData.map(
           ({ title, description, sourceLink, liveDemo, image, id }) => (
-            <div key={id} className="relative">
+            <motion.div
+              key={id}
+              initial={{
+                opacity: 0,
+                y: -20
+              }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.5,
+                ease: "easeInOut",
+                delay: id * 0.4,
+              }}
+              className="relative"
+            >
               <AnimatePresence exitBeforeEnter>
                 <motion.div
                   onClick={() => closeDetails(id)}
@@ -67,7 +81,7 @@ const WorkSection = () => {
                   <p className="text-sm font-bold">{description}</p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           )
         )}
       </div>

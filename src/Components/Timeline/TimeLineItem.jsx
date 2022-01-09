@@ -7,9 +7,9 @@ const TimeLineItem = ({ data, index }) => {
       key={index}
       initial={{
         opacity: 0,
-        x: index % 2 === 0 ? 20 : windowsWidth > 640 ? -20 : 20,
+        x: index % 2 === 0 ? 8 : windowsWidth > 640 ? -8 : 8,
       }}
-      whileInView={{ opacity: 1, x: 0 }}
+      whileInView={{ opacity: 1, x: 1 }}
       viewport={{ once: true }}
       transition={{
         duration: 0.5,
