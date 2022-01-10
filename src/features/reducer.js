@@ -7,7 +7,7 @@ import pomodoroImage from "../Assets/pomodoroTimer.webp";
 import cryptoVerse from "../Assets/cryptoverse .webp";
 
 const initialState = {
-  darkMode: true,
+  darkMode: false,
   timelineItemContent: [
     { year: "2003", description: "Born in Beirut" },
     { year: "2020", description: "Started Front End Development" },

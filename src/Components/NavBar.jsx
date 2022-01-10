@@ -7,7 +7,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { setDarkMode } from "../features/reducer";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
-import { useLocation } from "react-router-dom";
 const NavBar = () => {
   const [bg, setBg] = useState("dark:navbarBg bg-white");
   const divRef = useRef();
@@ -29,7 +28,7 @@ const NavBar = () => {
   return (
     <div
       ref={divRef}
-      className={`h-[65px] fixed w-full left-0 top-0 backdrop-filter backdrop-blur-lg z-30 bg-opacity-70 ${bg}`}
+      className={`h-[65px] fixed w-full left-0 top-0 backdrop-filter backdrop-blur-lg z-30 bg-opacity-60 ${bg}`}
     >
       <div className="container relative z-10 flex items-center justify-between w-full h-full mx-auto sm:px-16">
         <Link to="/">
