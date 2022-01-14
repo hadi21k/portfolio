@@ -7,10 +7,14 @@ const About = () => {
   return (
     <>
       <motion.div
-        initial={{ y: -20, opacity: 0 }}
+        initial={{ y: -35, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.5, ease: "easeInOut", delay: 0.3 }}
-        exit={{ y: 20, opacity: 0 }}
+        transition={{
+          duration: 0.5,
+          delay: 0.3,
+          ease: "linear",
+        }}
+        exit={{ y: 35, opacity: 0 }}
         className="container px-2 mx-auto mt-6 sm:px-16"
       >
         <div className="py-2 font-medium text-center dark:text-[#111e27] dark:bg-white bg-red-500 text-white rounded">

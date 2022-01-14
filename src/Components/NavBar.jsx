@@ -35,9 +35,9 @@ const NavBar = () => {
           <div className="flex items-center px-2 space-x-2 font-semibold cursor-pointer lightTextMode dark:text-white logo group">
             <img
               src={chipIcon}
-              className="w-5 h-5 transition-all transform rotate-[-45deg] group-hover:rotate-0 duration-300"
+              className="w-4 h-4 transition-all transform rotate-[-45deg] group-hover:rotate-0 duration-300"
             />
-            <h1 className="text-xl font-semibold">Hadi</h1>
+            <h1 className="text-xl logo-font">Hadi</h1>
           </div>
         </Link>
         <ul className="items-center flex-1 hidden px-16 space-x-4 text-lg lightTextMode dark:text-white lists sm:flex">

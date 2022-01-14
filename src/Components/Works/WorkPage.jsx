@@ -6,9 +6,9 @@ const WorkPage = () => {
       <motion.div
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.5, ease: "easeInOut", delay: 0.3 }}
+        transition={{ duration: 0.5, ease: "linear" }}
         exit={{ y: 20, opacity: 0 }}
-        className="container sm:px-16 px-3 mx-auto"
+        className="container px-3 mx-auto sm:px-16"
       >
         <div className="flex items-center justify-start">
           <div className="dark:text-[#FFCE45] text-[#111e27] mt-2 text-xl border-b-4 font-semibold border-red-500 dark:border-[#6C757D]">
@@ -22,5 +22,3 @@ const WorkPage = () => {
 };
 
 export default WorkPage;
-
-

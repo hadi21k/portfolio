@@ -1,9 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --navbarBg: #111e27;
+  --mainDarkBg: #111e27;
+  --mainLightBg: #f0e7db;
+  --lightTextMode: #111e27;
+  --btnBg: #ffce45;
+  --openSans: "Open Sans", sans-serif;
+}
+
+.logo-font {
+  font-family: "Lobster", cursive;
+}
 ::-webkit-scrollbar {
   width: 5px;
   height: 5px;
@@ -14,15 +27,6 @@
 }
 ::-webkit-scrollbar-track {
   background: #111e27;
-}
-
-:root {
-  --navbarBg: #111e27;
-  --mainDarkBg: #111e27;
-  --mainLightBg: #f0e7db;
-  --lightTextMode: #111e27;
-  --btnBg: #ffce45;
-  --openSans: "Open Sans", sans-serif;
 }
 
 @layer base {
