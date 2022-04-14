@@ -12,7 +12,7 @@ const TimeLineItem = ({ data, index }) => {
       whileInView={{ opacity: 1, x: 1 }}
       viewport={{ once: true }}
       transition={{
-        duration: 0.5,
+        duration: 0.2,
         ease: "easeInOut",
         delay: (index + 1) * 0.4,
       }}

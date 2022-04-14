@@ -8,7 +8,7 @@ const WorkSection = () => {
     <>
       <div className="grid grid-cols-1 gap-12 py-3 mt-6 overflow-hidden sm:grid-cols-2 lg:grid-cols-3">
         {worksData.map(({ title, sourceLink, liveDemo, image, id }) => (
-          <div key={id}>
+          <div key={id} className="p-4 rounded-lg dark:bg-transparent bg-[#F0E7DB] shadow-xl dark:shadow-2xl ">
             <motion.div
               initial={{
                 opacity: 0,
@@ -22,7 +22,7 @@ const WorkSection = () => {
               }}
               className="cursor-pointer img"
             >
-              <img src={image} alt={title} className="rounded-lg" />
+              <img src={image} alt={title} className="rounded-lg text-2xl" />
             </motion.div>
             <motion.div
               initial={{ x: -80, opacity: 0 }}

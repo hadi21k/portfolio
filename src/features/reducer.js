@@ -13,7 +13,6 @@ const initialState = {
     { year: "2020", description: "Started Front End Development" },
     { year: "2022", description: "Learn Back End Development" },
     { year: "2023", description: "Work Freelancer as Full Stack Development" },
-    { year: "2023,2024", description: "Learn BlockChain Development" },
     { year: "2024", description: "Finish Computer sceince degree" },
   ],
   works: [
