@@ -6,9 +6,9 @@ const WorkSection = () => {
   const worksData = useSelector((state) => state.data.works);
   return (
     <>
-      <div className="grid grid-cols-1 gap-12 py-3 mt-6 overflow-hidden sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-12 py-3 mt-6 overflow-hidden md:grid-cols-2 lg:grid-cols-3">
         {worksData.map(({ title, sourceLink, liveDemo, image, id }) => (
-          <div key={id} className="p-4 rounded-lg dark:bg-transparent bg-[#F0E7DB] shadow-xl dark:shadow-2xl ">
+          <div key={id} className="rounded-lg overflow-hidden dark:border-white">
             <motion.div
               initial={{
                 opacity: 0,
@@ -28,9 +28,9 @@ const WorkSection = () => {
               initial={{ x: -80, opacity: 0 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, ease: "linear", delay: id * 0.5 }}
-              className="flex flex-col py-1 space-y-2"
+              className="flex flex-col space-y-2 py-2"
             >
-              <div className="text-lg text-[#111e27] dark:text-[#ffce45] font-bold mt-2">
+              <div className="text-lg text-[#111e27] dark:text-[#ffce45] font-bold">
                 <h1>{title}</h1>
               </div>
               <div className="flex space-x-2 itemcenter">

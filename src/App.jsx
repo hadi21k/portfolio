@@ -5,6 +5,7 @@ import { Route, Routes, useLocation } from "react-router";
 import Main from "./Components/Main";
 import NavBar from "./Components/NavBar";
 import WorkPage from "./Components/Works/WorkPage";
+import BlogPage from "./Components/Blogs/BlogPage";
 
 function App() {
   const location = useLocation();
@@ -20,6 +21,7 @@ function App() {
         <Routes location={location} key={location.key}>
           <Route path="/" element={<Main />} />
           <Route path="/works" element={<WorkPage />} />
+          <Route path="/blogs" element={<BlogPage />} />
         </Routes>
       </AnimatePresence>
     </div>

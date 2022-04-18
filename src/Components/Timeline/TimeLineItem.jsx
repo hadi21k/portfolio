@@ -19,7 +19,7 @@ const TimeLineItem = ({ data, index }) => {
       className="relative flex w-full px-5 overflow-x-hidden transition-all duration-500 sm:px-0 sm:justify-center sm:w-1/2 timeline-item"
     >
       <div
-        className={`h-full text-sm sm:text-base relative border-2 border-[#111e27] dark:border-white text-[#111e27] font-semibold dark:text-[#ffce45] w-[90%] py-4 px-3 rounded sm:before:block before:hidden before:absolute before:top-1/2 before:bg-[#111e27] dark:before:bg-white ${
+        className={`h-full text-sm sm:text-base relative border-2 border-[#111e27] dark:border-[#ffce45] text-[#111e27] font-semibold dark:text-[#ffce45] w-[90%] py-4 px-3 rounded sm:before:block before:hidden before:absolute before:top-1/2 before:bg-[#111e27] dark:before:bg-[#ffce45] ${
           index % 2 === 0 ? "before:left-[-48px]" : "before:right-[-48px]"
         } before:w-12 before:h-[2px]`}
       >
