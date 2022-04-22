@@ -20,7 +20,6 @@ function App() {
         <Routes location={location} key={location.key}>
           <Route path="/" element={<Main />} />
           <Route path="/works" element={<WorkPage />} />
-          <Route path="/blogs" element={<BlogPage />} />
         </Routes>
       </AnimatePresence>
     </div>
