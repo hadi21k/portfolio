@@ -7,11 +7,11 @@ const WorkSection = () => {
 	const worksData = useSelector((state) => state.data.works);
 	return (
 		<>
-			<div className="grid grid-cols-1 gap-12 py-3 mt-6 overflow-hidden md:grid-cols-2 lg:grid-cols-3">
+			<div className="grid grid-cols-1 gap-12 py-3 mt-6 overflow-hidden md:grid-cols-2 xl:grid-cols-3">
 				{worksData.map(({ title, sourceLink, liveDemo, image, id }) => (
 					<div
 						key={id}
-						className="overflow-hidden transition-all duration-300 transform translate-y-0 rounded-lg hover:translate-y-[-5px] group"
+						className="overflow-hidden rounded-lg"
 					>
 						<motion.div
 							initial={{
@@ -29,7 +29,7 @@ const WorkSection = () => {
 							<img
 								src={image}
 								alt={title}
-								className="duration-300 rounded-lg opacity-50 group-hover:opacity-100 transtion-all"
+								className="rounded-lg"
 							/>
 						</motion.div>
 						<motion.div
@@ -40,10 +40,10 @@ const WorkSection = () => {
 						>
 							<div className="flex space-x-1">
 								<a href={liveDemo}>
-									<AiOutlineGithub className="w-5 h-5 dark:text-white text-[#111e27] transition-all duration-300 transform scale-100 hover:scale-110" />
+									<HiOutlinePencilAlt className="w-6 h-6 dark:text-white text-[#111e27] transition-all duration-300 transform scale-100 hover:scale-110" />
 								</a>
 								<a href={sourceLink}>
-									<HiOutlinePencilAlt className="w-5 h-5 dark:text-white text-[#111e27] transition-all duration-300 transform scale-100 hover:scale-110" />
+									<AiOutlineGithub className="w-6 h-6 dark:text-white text-[#111e27] transition-all duration-300 transform scale-100 hover:scale-110" />
 								</a>
 							</div>
 							<div className="text-sm text-[#111e27] dark:text-[#ffce45] font-semibold">
