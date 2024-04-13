@@ -1,5 +1,5 @@
 import type { Project } from "@/lib/types";
-import ProjectItem from "./shared/Projects/Project";
+import ProjectItem from "./Project";
 
 type Props = {
   projects: Project[];

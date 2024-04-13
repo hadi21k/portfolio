@@ -37,31 +37,36 @@ const ContactForm = () => {
 
   return (
     <Form {...form}>
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-        <FormField
-          control={control}
-          name="name"
-          render={({ field }) => (
-            <FormItem>
-              <FormControl>
-                <Input placeholder="Name" {...field} />
-              </FormControl>
-              <FormMessage {...field} />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={control}
-          name="email"
-          render={({ field }) => (
-            <FormItem>
-              <FormControl>
-                <Input placeholder="Email" {...field} />
-              </FormControl>
-              <FormMessage {...field} />
-            </FormItem>
-          )}
-        />
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="flex w-full flex-col space-y-4"
+      >
+        <div className="flex max-md:flex-col max-md:space-y-2 md:space-x-2">
+          <FormField
+            control={control}
+            name="name"
+            render={({ field }) => (
+              <FormItem className="md:w-1/2">
+                <FormControl>
+                  <Input placeholder="Name" {...field} />
+                </FormControl>
+                <FormMessage {...field} />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={control}
+            name="email"
+            render={({ field }) => (
+              <FormItem className="md:w-1/2">
+                <FormControl>
+                  <Input placeholder="Email" {...field} />
+                </FormControl>
+                <FormMessage {...field} />
+              </FormItem>
+            )}
+          />
+        </div>
         <FormField
           control={control}
           name="message"

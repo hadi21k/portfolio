@@ -11,7 +11,7 @@ type Props = {
 const ProjectItem = ({ project }: Props) => {
   return (
     <div className="relative overflow-hidden rounded-xl bg-gradient-colors p-0.5">
-      <div className="flex min-h-60 flex-col rounded-xl bg-black p-0 text-white bg-grid-white/5 max-md:min-h-64 sm:flex-row sm:space-x-3">
+      <div className="flex min-h-60 flex-col rounded-xl bg-black p-0 text-white bg-dot-white/10 max-md:min-h-64 sm:flex-row sm:space-x-3">
         <Image
           src={NextBackground}
           alt={project.title}
