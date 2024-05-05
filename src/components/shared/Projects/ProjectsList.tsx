@@ -1,16 +1,27 @@
-import type { Project } from "@/lib/types";
 import ProjectItem from "./Project";
+import { projects } from "#site/content";
+import { sortProjects } from "@/lib/utils";
 
-type Props = {
-  projects: Project[];
-};
+const ProjectsList = () => {
+  const filteredProjects = sortProjects(
+    projects.filter((project) => project.published),
+  ).slice(0, 4);
 
-const ProjectsList = ({ projects }: Props) => {
   return (
     <div className="mt-2 space-y-3">
-      {projects.map((project, i) => (
-        <ProjectItem project={project} key={i} />
-      ))}
+      {filteredProjects.map((project, i) => {
+        const { title, date, demoLink, githubLink, slug } = project;
+
+        const items = {
+          title,
+          date,
+          demoLink,
+          githubLink,
+          slug,
+        };
+
+        return <ProjectItem project={items} key={i} />;
+      })}
     </div>
   );
 };

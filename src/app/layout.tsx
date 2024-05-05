@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} min-w-[200px]`}>
+      <body className={`${inter.className} min-w-[200px] bg-black text-white`}>
         <NextTopLoader color="#f37a0c" showSpinner={false} />
         <Navbar />
         {children}

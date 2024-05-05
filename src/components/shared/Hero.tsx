@@ -12,8 +12,8 @@ const Main = () => {
             <span className="inline-block bg-gradient-colors bg-clip-text font-semibold text-transparent">
               Full Stack Developer
             </span>{" "}
-            - Building Highly Scalable Applications (JavaScript, TypeScript,
-            Nodejs, React)
+            - Building Highly Scalable Applications (TypeScript, Nodejs, React,
+            NextJS)
           </p>
           <Link
             href="/about"

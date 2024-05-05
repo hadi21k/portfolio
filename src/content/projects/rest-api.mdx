@@ -1,0 +1,64 @@
+---
+title: REST API with Node.js, MongoDB, Mongoose, JWT, and Swagger
+description: This project is a fully functional REST API built using Node.js, MongoDB, Mongoose, JWT, and Swagger. It provides basic CRUD operations, secure authentication using JWT, data persistence with MongoDB, integration tests with Jest, and Dockerization for easy deployment. The Swagger documentation ensures clear understanding of the API endpoints.
+date: 2024-03-04
+githubLink: https://github.com/hadi21k/rest-api
+demoLink: https://hadidiab.tech
+published: true
+---
+
+## Technologies Used
+- **Node.js**: Server-side JavaScript runtime environment.
+- **MongoDB**: NoSQL database for data storage.
+- **Mongoose**: Object Data Mapping (ODM) library for MongoDB in Node.js.
+- **JWT (JSON Web Token)**: Authentication mechanism for securing API endpoints.
+- **Swagger**: Open-source API documentation tool.
+- **Jest**: JavaScript testing framework for integration tests.
+
+## Features
+- **CRUD Operations**: Supports Create, Read, Update, and Delete operations.
+- **Secure Authentication**: Implements JWT for secure authentication.
+- **Data Persistence**: MongoDB used for storing data persistently.
+- **Integration Tests**: Utilizes Jest for integration testing.
+- **Dockerized Deployment**: Docker containerization for easy deployment.
+- **Swagger Documentation**: Provides clear API understanding with Swagger documentation.
+
+### Directory Structure
+```
+rest-api/
+├── config/
+│   └── ...
+├── controllers/
+│   └── ...
+├── middlewares/
+│   └── ...
+├── models/
+│   └── ...
+├── routes/
+│   └── v1/
+│       └── ...
+├── services/
+│   └── ...
+├── tests/
+│   └── ...
+├── utils/
+│   └── ...
+├── validations/
+│   └── ...
+├── app.js
+└── index.js
+```
+
+### Explanation
+- **config/**: Configuration files.
+- **controllers/**: Handles business logic.
+- **middlewares/**: Contains middleware functions.
+- **models/**: Defines Mongoose schema for MongoDB.
+- **routes/**: Defines API endpoints.
+  - **v1/**: Version 1 of API endpoints.
+- **services/**: Additional services used in the application.
+- **tests/**: Contains test files.
+- **utils/**: Utility functions.
+- **validations/**: Validation logic.
+- **app.js**: Main application file.
+- **index.js**: Entry point of the application.
