@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import React from "react";
 import {
   Tooltip,
@@ -9,7 +9,7 @@ import {
 
 type SkillsProps = {
   name: string;
-  imageUrl: string;
+  imageUrl: StaticImageData;
   alt: string;
 };
 
