@@ -7,7 +7,8 @@ import { projects } from "#site/content";
 import { MDXContent } from "@/components/shared/MDXContent";
 import { formatDate } from "@/lib/utils";
 
-import { GithubIcon, Link2 } from "lucide-react";
+import { Link2 } from "lucide-react";
+import GithubIcon from "@/components/ui/github-icon";
 
 type Props = {
   params: {
@@ -53,7 +54,7 @@ const page = async ({ params }: Props) => {
   }
 
   return (
-    <div className="relative min-h-[calc(100vh-80px)] overflow-hidden antialiased bg-grid-white/[0.07]">
+    <div className="min-h-screen pt-[80px] bg-grid-white/[0.07]">
       <article className="container prose prose-invert max-w-3xl py-6">
         <h1 className="mb-2">{project.title}</h1>
         <div className="flex items-center justify-between">

@@ -36,7 +36,7 @@ const AboutContent = () => {
       <div>
         <h1 className="mb-2 text-2xl">FAQ</h1>
         <ol className="list-disc px-5">
-          <li>I&apos;m from in Beirut Lebanon.</li>
+          <li>I&apos;m from Beirut, Lebanon.</li>
           <li>Born in July, 2003.</li>
           <li>
             Started my career in 2021 through learning aside with my university.

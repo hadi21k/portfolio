@@ -1,6 +1,6 @@
 import H1 from "@/components/ui/h1";
 import Skill from "./Skill";
-import { technologies } from "@/lib/skills_set";
+import { technologies } from "@/constants/skills_set";
 
 const Skills = () => {
   return (
