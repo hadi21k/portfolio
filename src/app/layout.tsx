@@ -4,6 +4,8 @@ import NextTopLoader from "nextjs-toploader";
 import "./globals.css";
 import Navbar from "@/components/shared/Navbar";
 
+import { Analytics } from "@vercel/analytics/react";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -23,6 +25,7 @@ export default function RootLayout({
         <NextTopLoader color="#f37a0c" showSpinner={false} />
         <Navbar />
         {children}
+        <Analytics />
       </body>
     </html>
   );
