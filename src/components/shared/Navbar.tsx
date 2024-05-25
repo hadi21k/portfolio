@@ -1,6 +1,5 @@
 import { MessageSquare } from "lucide-react";
 import Link from "next/link";
-import Logo from "@/assets/logo.webp";
 import Image from "next/image";
 
 const Navbar = () => {
