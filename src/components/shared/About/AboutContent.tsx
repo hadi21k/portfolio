@@ -25,7 +25,7 @@ const AboutContent = () => {
         I am committed to continuous learning and am always exploring the latest
         advancements in software development. My goal is to apply my skills to
         transformative projects and collaborate with teams that are pushing the
-        boundaries of what's possible.
+        boundaries of what&apos;s possible.
       </p>
       <Separator className="bg-gray-200" />
       <div>
