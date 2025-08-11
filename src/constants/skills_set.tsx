@@ -10,6 +10,7 @@ import PostgreSQL from "@/assets/languages/postgresql.png";
 import Docker from "@/assets/languages/docker.png";
 import TailwindCSS from "@/assets/languages/tailwindcss.png";
 import Git from "@/assets/languages/git.png";
+import Laravel from "@/assets/languages/laravel.png";
 
 export const technologies = [
   {
@@ -21,6 +22,11 @@ export const technologies = [
     name: "TypeScript",
     imageUrl: TypeScript,
     alt: "TypeScript",
+  },
+  {
+    name: "Laravel",
+    imageUrl: Laravel,
+    alt: "Laravel",
   },
   {
     name: "Node JS",

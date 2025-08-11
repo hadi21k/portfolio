@@ -6,48 +6,41 @@ const AboutContent = () => {
   return (
     <div className="max-w-3xl space-y-10 py-8 font-medium leading-normal sm:text-lg">
       <p>
-        As an accomplished full-stack architect, I draw inspiration from a
-        ceaseless drive to engineer inventive solutions and harness the
-        forefront of technological advancements. Rooted in the dynamic realms of
-        JavaScript, TypeScript, React, and Node.js, augmented by a rich tapestry
-        of experience with a diverse toolkit, I excel in unraveling intricate
-        puzzles and orchestrating outcomes that transcend expectations.
+        I am a Full Stack Developer specializing in building scalable, real-time
+        applications. With a strong foundation in TypeScript, React, Node.js,
+        and Laravel, I focus on creating clean architecture and solving complex
+        challenges with efficient code. My work is driven by a passion for
+        leveraging technology to deliver robust solutions in demanding
+        environments like logistics and AI infrastructure.
       </p>
       <p>
-        With a robust background in full-stack development, I bring a wealth of
-        experience to the table. Proficient in JavaScript, TypeScript, React,
-        and Node.js, I&apos;ve led diverse projects, delivering solutions that
-        surpass expectations. Specializing in architecting resilient
-        infrastructures, my expertise ensures peak performance and reliability.
-        Moreover, my soft skills, including innovation and effective
-        communication, drive collaborative success and contribute to meaningful
-        projects.
+        In my recent roles, I have engineered enterprise-grade systems from the
+        ground up. At Pixel38, I architected the backend for a real-time food
+        delivery platform and modernized a legacy shipment system, cutting
+        technical debt by 40%. At SlashML, I designed a queue-based system to
+        dynamically deploy AI models on EC2, showcasing my ability to work at
+        the intersection of backend development and cloud infrastructure.
       </p>
       <p>
-        As technology continues its relentless evolution, I remain steadfast in
-        my dedication to perpetual growth and innovation. Whether I&apos;m
-        delving into the latest advancements in JavaScript frameworks or
-        exploring emerging trends in cloud computing, I thrive on expanding my
-        repertoire and pushing the boundaries of what&apos;s achievable. With an
-        unyielding commitment to excellence, I eagerly embrace new opportunities
-        to lend my expertise to transformative endeavors.
+        I am committed to continuous learning and am always exploring the latest
+        advancements in software development. My goal is to apply my skills to
+        transformative projects and collaborate with teams that are pushing the
+        boundaries of what's possible.
       </p>
       <Separator className="bg-gray-200" />
       <div>
-        <h1 className="mb-2 text-2xl">FAQ</h1>
-        <ol className="list-disc px-5">
-          <li>I&apos;m from Beirut, Lebanon.</li>
-          <li>Born in July, 2003.</li>
-          <li>
-            Started my career in 2021 through learning aside with my university.
-          </li>
-          <li>I love to learn new things and I&apos;m always curious.</li>
-        </ol>
+        <h1 className="mb-2 text-2xl">Quick Facts</h1>
+        <ul className="list-disc space-y-1 px-5">
+          <li>Based in Beirut, Lebanon.</li>
+          <li>Began my software development journey in 2021.</li>
+          <li>Holds the AWS Certified Cloud Practitioner certification.</li>
+          <li>Passionate about problem-solving and lifelong learning.</li>
+        </ul>
       </div>
       <Separator className="bg-gray-200" />
       <div>
-        <h1 className="mb-2 text-2xl">Social Media</h1>
-        <ul className="list-disc px-5">
+        <h1 className="mb-2 text-2xl">Connect with Me</h1>
+        <ul className="list-disc space-y-1 px-5">
           <li>
             <Link
               className="text-blue-500 underline-offset-2 hover:underline"

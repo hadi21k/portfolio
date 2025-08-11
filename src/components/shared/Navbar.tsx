@@ -9,7 +9,7 @@ const Navbar = () => {
         <Link href="/">
           <Image src="/logo.webp" alt="Logo" width={40} height={40} />
         </Link>
-        <Link href="#contact" className="flex items-center space-x-2">
+        <Link href="/#contact" className="flex items-center space-x-2">
           <span>Contact Me</span>
           <MessageSquare />
         </Link>
