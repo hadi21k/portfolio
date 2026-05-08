@@ -1,0 +1,51 @@
+---
+id: database-mcp
+slug: database-mcp
+title: "Multi Database MCP Server"
+year: 2026
+kicker: "DEVELOPER TOOL · 2026"
+role: "Author"
+tech:
+  - TypeScript
+  - Node.js
+  - MCP
+  - PostgreSQL
+  - SQL Server
+repoUrl: https://github.com/hadi21k/database-mcp
+liveUrl:
+status: open-source
+oneLineSummary: "A read-only MCP server giving AI agents safe schema discovery and query access across SQL Server and Postgres, with profile isolation that prevents cross-environment leaks."
+featured: true
+---
+
+## The problem
+
+Most database connections to AI agents are accidents waiting to happen.
+
+The pattern looks fine in a demo: hand the agent a connection string, let it run SQL, watch it answer questions. The pattern looks different at 2 a.m. in production, when an agent decides the cleanest way to "fix" your data is a `DELETE` and a hopeful `WHERE` clause. Read access bleeds into write access. Staging credentials get reused for prod. A model that has never met your schema is asked to navigate it on instinct.
+
+Teams that want AI in the loop on their data need three things at once: read-only by construction, fast onboarding to a new database, and a credential model where cross-environment leaks are impossible, not just unlikely.
+
+## Approach
+
+The server is built on the Model Context Protocol and speaks to two engines: SQL Server and PostgreSQL. It exposes schema discovery, relationship mapping, query validation, and parameterized execution. Writes are not a feature you can turn on. They are not implemented.
+
+Agents get tools for listing schemas, describing tables, mapping foreign keys, and inspecting indexes and materialized views. Queries pass through validation before they execute, with parameter binding instead of string concatenation. EXPLAIN plans surface cost estimates so an agent can reason about a query before it runs, not after it has locked a table.
+
+Credentials live behind a multi-profile system. Dev, staging, and prod are separate profiles with separate connection contexts. There is no shared default and no fallback path. An agent connected to `dev` cannot reach `prod` by accident, because the wiring to do so does not exist in the running process.
+
+## Outcome
+
+Three concrete results, written down because they are the reason the project exists.
+
+Database onboarding dropped from days to minutes. A new database becomes useful to an AI workflow as soon as the profile is configured, because schema discovery and relationship mapping are tools the agent already has.
+
+Accidental production mutations were eliminated, by construction rather than by policy. The server cannot write. There is no flag.
+
+Cross-environment data leaks were prevented. Profiles are isolated, credentials do not bleed, and an agent acting in one environment has no path to another.
+
+## What I learned
+
+Safety as a feature is weaker than safety as an absence. The strongest guarantee in this project is the one that comes from code that does not exist. Every time I considered an "advanced" write tool, I came back to the same answer: the buyer of this server is buying the absence of that tool, not its presence.
+
+I also learned how much of database UX for an agent is really schema UX. Once relationships, indexes, and materialized views are first-class tools, queries get shorter and answers get sharper. The agent stops guessing column names and starts reasoning about the shape of the data. That shift, more than any single optimization, is what made the server feel useful.

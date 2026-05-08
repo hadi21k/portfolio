@@ -1,0 +1,51 @@
+---
+id: chat-system
+slug: chat-system
+title: "Real-time Chat System"
+year: 2024
+kicker: "REAL-TIME · 2024"
+role: "Author"
+tech:
+  - Fastify
+  - WebSockets
+  - Next.js
+  - Redis
+  - Docker
+repoUrl: https://github.com/hadi21k/chat_system
+liveUrl:
+status: open-source
+oneLineSummary: "A scalable chat backend on Fastify and WebSockets, using Upstash Redis Pub/Sub to broadcast across instances, with Docker multi-stage builds and graceful shutdown handling."
+featured: true
+---
+
+## The problem
+
+Real-time chat is easy to demo and hard to scale.
+
+The first version is a weekend. One Node process, a WebSocket server, an in-memory map of connected clients. Type a message in tab A, see it in tab B. Done. The trouble starts the moment a second backend instance joins the party. Now tab A is connected to instance one, tab B is connected to instance two, and the in-memory map on each instance is a private island. Messages stay where they were sent.
+
+That is the interesting problem. Not the chat. The broadcast.
+
+## Approach
+
+The transport is WebSockets, served from a Fastify backend. Each client opens a connection to whichever instance the load balancer hands it, and the instance keeps a local registry of its own clients.
+
+The broadcast layer is Upstash Redis Pub/Sub. When a message lands on instance one, it is published to a Redis channel. Every backend instance, including the one that received the message, is subscribed to that channel. On receipt, each instance fans the message out to its local WebSocket clients. The fan-out is local and cheap; the cross-instance hop happens once, in Redis.
+
+A connection counter rides on the same channel, so users see the live participant count without any instance needing to know about the others directly.
+
+Graceful shutdown matters here. When an instance terminates, it closes its WebSocket connections cleanly, unsubscribes from Redis, and lets the load balancer drain. The frontend, a Next.js app styled with Tailwind and Shadcn, reconnects on its own.
+
+The whole thing ships as a Docker multi-stage build, with `docker-compose` for local development and Vercel for the frontend.
+
+## Outcome
+
+This is a personal learning project, not a product with users. The outcome is what I now know about building this class of system, not adoption metrics I do not have.
+
+What works: a single message survives the trip from one instance, through Redis, to clients connected to a different instance, in the time a user expects. The connection counter stays honest under multiple tabs. Shutdowns do not strand clients.
+
+## What I learned
+
+The instructive moment was watching the second instance fail and understanding why. State on a single process is a shortcut, and the shortcut has a cost the moment you scale horizontally. Pub/Sub is not magic; it is a discipline about where state lives.
+
+I also learned to respect the boring work around the interesting work. Reconnect logic, graceful shutdown, container size, local dev parity. Each of those is unglamorous on its own and the difference between a chat that works in a tutorial and a chat that works on a Tuesday afternoon.

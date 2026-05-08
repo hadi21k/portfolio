@@ -1,0 +1,40 @@
+---
+id: compliance-exam-platform
+slug: compliance-exam-platform
+title: "Compliance Exam Platform"
+year: 2026
+kicker: "CLIENT WORK · REGULATED FINANCE · 2026"
+role: "Lead Developer (Freelance)"
+tech:
+  - TypeScript
+  - React
+  - Express
+  - PostgreSQL
+  - Prisma
+  - pgvector
+  - OpenAI
+status: under-contract
+oneLineSummary: "An exam platform for a regulated-finance compliance advisory: outbox events and a Postgres-only job queue, pgvector and OpenAI for author-time question similarity, and a five-state compliance model that drives the right escalations."
+featured: false
+kind: freelance
+---
+
+## The platform
+
+An exam platform for a regulated-finance compliance advisory. Compliance teams author questions in a moderated workflow, publish exams targeted at executives, controllers, and frontline staff, and read back results that hold up if a regulator asks about them later. The hard part is everything around the exam: events that cannot be lost, jobs that have to retry without double-running, and a domain model honest enough to drive escalations.
+
+## Durable on Postgres, no Redis
+
+Domain events (exam published, score available, exam deleted) are written inside the same transaction as the business state, then polled by a dispatcher that uses `FOR UPDATE SKIP LOCKED` for multi-instance safety, exponential backoff on retries, and a 7-day cleanup. Background work runs on a job queue I built on PostgreSQL advisory locks rather than Redis: atomic claiming, configurable concurrency, retry state persisted, processor registry for pluggable handlers (embedding generation, email, Excel import, PDF export). One dependency. The durability story is owned end to end.
+
+## Author-time question similarity with embeddings
+
+Every question is embedded with OpenAI and stored as `halfvec(3072)` with an HNSW index. When an author submits a new question, the service runs cosine similarity against the existing pool and warns of near-duplicates above a configurable threshold before the question enters review. Re-embedding is gated by a SHA256 content hash, so saving an unchanged question does not re-call OpenAI. The check is advisory: if the AI provider is unreachable, authoring continues without it.
+
+## A compliance state machine that matches reality
+
+User compliance used to be a binary: passed, or not. That model gave admins no signal. Someone who failed once and can still retake looked identical to someone whose attempts were exhausted and needs intervention. I replaced it with five states (`PASSED`, `FAILED_EXHAUSTED`, `FAILED_CAN_RETAKE`, `IN_PROGRESS`, `NOT_STARTED`), each derived from session history filtered to the relevant time window, per period for recurring exams, lifetime for one-time. Reminders now route only to users who can self-remediate. The escalation queue is a real number on the dashboard.
+
+## What I learned
+
+Two things. Picking Postgres for jobs and events is the right answer until concurrency or scale data say otherwise, and saying that out loud to a client (instead of reaching for the more recognizable name) is part of the work. The binary compliance flag was the most expensive line of code in the system: every downstream feature, notifications, exports, admin views, inherited the wrong shape until the model was unwound. Domain mistakes compound; getting them slightly wrong charges interest forever.

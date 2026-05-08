@@ -1,0 +1,51 @@
+---
+id: figma-mcp
+slug: figma-mcp
+title: "Figma MCP Server"
+year: 2026
+kicker: "AI TOOLING · 2026"
+role: "Author"
+tech:
+  - TypeScript
+  - Node.js
+  - MCP
+  - WebSocket
+  - Figma Plugin API
+repoUrl: https://github.com/hadi21k/figma-mcp
+liveUrl:
+status: open-source
+oneLineSummary: "An open-source MCP server that lets AI agents drive real Figma work, frames, auto layout, components, through a validated bridge into the plugin sandbox."
+featured: true
+---
+
+## The problem
+
+I wanted Figma's plugin API in Claude's hands, but Figma's plugin sandbox isn't a friendly place to live.
+
+Designers and engineers keep asking the same question: can the agent actually do the work inside Figma, not just describe it? Generate a frame. Set auto layout. Drop a component instance. Adjust typography. The Figma Plugin API can do all of these. The hard part is reaching it from outside the sandbox, which is where AI assistants like Claude Desktop and Cursor actually run.
+
+The wiring is non-obvious. The sandbox is restrictive on purpose. A naive bridge ends up as a pile of unvalidated commands, intermittent failures, and a plugin that crashes the moment a message shape drifts.
+
+## Approach
+
+The server splits the problem into three layers, each with one job.
+
+The MCP server speaks JSON-RPC over stdio to the AI host. It exposes a vocabulary of design tools, more than sixty of them, covering frames, auto layout, typography, components, and component instances. Each tool has a typed schema, so an agent that calls `create_frame` cannot ship a string where a number belongs.
+
+A WebSocket bridge runs locally on `127.0.0.1:9001`. It accepts the validated commands from the MCP server and forwards them to the plugin. The bridge is intentionally boring: it does not interpret, it routes.
+
+The Figma plugin lives inside the sandbox. It receives commands, runs them against the Plugin API, and returns results. Every incoming message is validated before it touches a node. Anything that fails the schema check is rejected at the boundary, with an error the agent can read and recover from.
+
+The result is that the unreliable surface, the sandbox itself, sees only well-formed work. Failure modes become legible.
+
+## Outcome
+
+The server is open source and used internally to accelerate UI prototyping. That is the size of the claim.
+
+What the project does well is reduce the distance between "the agent suggested this layout" and "the layout exists in the file." Frames, auto layout settings, and component instances move from text to artifacts in one step.
+
+## What I learned
+
+Hostile environments reward thin contracts. The sandbox is not the place to be clever. The cleverness belongs at the boundary, in validation, where a malformed command is caught before it reaches the part of the system that is hard to debug. Once I accepted that, the plugin code got smaller and the bridge code got smaller, and the server got more reliable.
+
+I also learned that a tool surface is a design problem, not just an API problem. Sixty tools sounds like a lot until you watch an agent use them. The right grain, one tool per concept the designer would name, is what lets the agent reason about the work instead of the protocol.

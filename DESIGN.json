@@ -1,0 +1,233 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-05-08T12:00:00Z",
+  "title": "Design System: Hadi's Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "paper-cream": {
+        "role": "neutral",
+        "displayName": "Paper Cream",
+        "canonical": "oklch(95% 0.012 80)",
+        "tonalRamp": ["#1a1916", "#3d3b36", "#6b6760", "#9b9790", "#ccc9be", "#e4dfd4", "#ede9e0", "#f5f2eb"]
+      },
+      "paper-cream-card": {
+        "role": "neutral",
+        "displayName": "Paper Cream Card",
+        "canonical": "oklch(93% 0.012 80)",
+        "tonalRamp": ["#1a1916", "#3d3b36", "#6b6760", "#9b9790", "#ccc9be", "#e4dfd4", "#ede9e0", "#f5f2eb"]
+      },
+      "paper-cream-hover": {
+        "role": "neutral",
+        "displayName": "Paper Cream Hover",
+        "canonical": "oklch(90% 0.014 80)",
+        "tonalRamp": ["#1a1916", "#3d3b36", "#6b6760", "#9b9790", "#ccc9be", "#e4dfd4", "#ede9e0", "#f5f2eb"]
+      },
+      "ink-near-black": {
+        "role": "neutral",
+        "displayName": "Ink Near-Black",
+        "canonical": "oklch(15% 0.005 60)",
+        "tonalRamp": ["#1a1916", "#3d3b36", "#6b6760", "#9b9790", "#ccc9be", "#e4dfd4", "#ede9e0", "#f5f2eb"]
+      },
+      "ink-secondary": {
+        "role": "neutral",
+        "displayName": "Ink Secondary",
+        "canonical": "oklch(28% 0.005 60)",
+        "tonalRamp": ["#1a1916", "#3d3b36", "#6b6760", "#9b9790", "#ccc9be", "#e4dfd4", "#ede9e0", "#f5f2eb"]
+      },
+      "ink-muted": {
+        "role": "neutral",
+        "displayName": "Ink Muted",
+        "canonical": "oklch(48% 0.005 60)",
+        "tonalRamp": ["#1a1916", "#3d3b36", "#6b6760", "#9b9790", "#ccc9be", "#e4dfd4", "#ede9e0", "#f5f2eb"]
+      },
+      "press-red": {
+        "role": "primary",
+        "displayName": "Press Red",
+        "canonical": "oklch(53% 0.165 30)",
+        "tonalRamp": ["#3a0e08", "#5a1810", "#7a2218", "#962d22", "#c0392b", "#d96249", "#e89788", "#f5cdc4"]
+      },
+      "press-red-deep": {
+        "role": "primary",
+        "displayName": "Press Red Deep",
+        "canonical": "oklch(45% 0.155 28)",
+        "tonalRamp": ["#3a0e08", "#5a1810", "#7a2218", "#962d22", "#c0392b", "#d96249", "#e89788", "#f5cdc4"]
+      },
+      "steel-blue": {
+        "role": "tertiary",
+        "displayName": "Steel Blue",
+        "canonical": "oklch(50% 0.115 250)",
+        "tonalRamp": ["#0c1f37", "#13325a", "#1a4880", "#2563a8", "#5384c2", "#86abd5", "#b8cfe5", "#dde9f3"]
+      },
+      "forest-green": {
+        "role": "tertiary",
+        "displayName": "Forest Green",
+        "canonical": "oklch(46% 0.105 150)",
+        "tonalRamp": ["#091a0f", "#0f2c1a", "#143f25", "#1a6b3a", "#3d8f5e", "#73b58c", "#a8d3b7", "#daece1"]
+      },
+      "warm-tan-border": {
+        "role": "neutral",
+        "displayName": "Warm Tan Border",
+        "canonical": "oklch(80% 0.014 80)",
+        "tonalRamp": ["#1a1916", "#3d3b36", "#6b6760", "#9b9790", "#ccc9be", "#e4dfd4", "#ede9e0", "#f5f2eb"]
+      },
+      "code-ink": {
+        "role": "neutral",
+        "displayName": "Code Ink",
+        "canonical": "oklch(15% 0.005 60)",
+        "tonalRamp": ["#0d0d0c", "#1a1916", "#2a2925", "#3d3b36", "#5a5751", "#9b9790", "#ccc9be", "#f5f2eb"]
+      },
+      "code-lime": {
+        "role": "primary",
+        "displayName": "Code Lime",
+        "canonical": "oklch(92% 0.20 120)",
+        "tonalRamp": ["#1f2d09", "#395212", "#52771a", "#6b9b22", "#9bcc36", "#c8f542", "#dcf78a", "#ecfac0"]
+      }
+    },
+    "typographyMeta": {
+      "kicker": { "displayName": "Kicker", "purpose": "Small ALL CAPS red label above section headlines and project titles. The signature element." },
+      "display": { "displayName": "Display", "purpose": "Hero H1 and long-form page H1. Tightened tracking, large clamp scale." },
+      "headline": { "displayName": "Headline", "purpose": "H2 section titles. Always Ink Near-Black, never red." },
+      "title": { "displayName": "Title", "purpose": "H3 inside cards and sub-section heads." },
+      "body": { "displayName": "Body (sans)", "purpose": "Default running UI text in Inter. Capped at 65ch line length." },
+      "body-serif": { "displayName": "Body (serif)", "purpose": "Long-form essay copy in Newsreader. About page intro, project case studies." },
+      "label": { "displayName": "Label", "purpose": "Button labels, form labels, table heads, meta chips. Inter 500 ALL CAPS." },
+      "mono": { "displayName": "Mono", "purpose": "Inline code in copy and full code blocks. JetBrains Mono. Lives inside code containers only." }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "ease-out-expo", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Entrance animations and revealed elements (hero text, scroll-triggered reveals)." },
+      { "name": "ease-out-quart", "value": "cubic-bezier(0.25, 1, 0.5, 1)", "purpose": "State changes (button hover, link color shift, card hover)." },
+      { "name": "duration-fast", "value": "150ms", "purpose": "Micro-state transitions: link color, focus ring." },
+      { "name": "duration-base", "value": "250ms", "purpose": "Default state-change duration: button hover, card lift." },
+      { "name": "duration-slow", "value": "400ms", "purpose": "Section transitions, modal-style appearances." },
+      { "name": "duration-glide", "value": "800ms", "purpose": "Hero entrance animations, large-display reveals." },
+      { "name": "reduced-motion-fallback", "value": "duration: 0ms; or 150ms fade only", "purpose": "When prefers-reduced-motion is set, all animations collapse to instant or short fade. No transforms, no parallax, no Lenis smoothing." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" },
+      { "name": "2xl", "value": "1536px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Solid ink button with paper text. Hover stamps Press Red on the background. The only place red appears on a button.",
+      "html": "<button class=\"ds-btn-primary\">VIEW WORK</button>",
+      "css": ".ds-btn-primary { background: #1a1916; color: #f5f2eb; font-family: Inter, system-ui, sans-serif; font-weight: 500; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; padding: 14px 28px; border: 1px solid #1a1916; border-radius: 0; cursor: pointer; transition: background-color 250ms cubic-bezier(0.25, 1, 0.5, 1); } .ds-btn-primary:hover { background: #c0392b; border-color: #c0392b; } .ds-btn-primary:focus-visible { outline: 2px solid #1a1916; outline-offset: 2px; }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Transparent button with hairline tan border. Hover deepens border and shifts background to cream-card.",
+      "html": "<button class=\"ds-btn-ghost\">CONTACT</button>",
+      "css": ".ds-btn-ghost { background: transparent; color: #1a1916; font-family: Inter, system-ui, sans-serif; font-weight: 500; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; padding: 14px 28px; border: 1px solid #ccc9be; border-radius: 0; cursor: pointer; transition: background-color 250ms cubic-bezier(0.25, 1, 0.5, 1), border-color 250ms cubic-bezier(0.25, 1, 0.5, 1); } .ds-btn-ghost:hover { background: #ede9e0; border-color: #1a1916; } .ds-btn-ghost:focus-visible { outline: 2px solid #1a1916; outline-offset: 2px; }"
+    },
+    {
+      "name": "Inline Body Link",
+      "kind": "custom",
+      "refersTo": "link-inline",
+      "description": "Press Red color, underline-offset 4px, deepens to Press Red Deep on hover. Color is paired with underline so the affordance is not color-only.",
+      "html": "<p class=\"ds-prose\">A note about <a href=\"#\" class=\"ds-link-inline\">scarce ink</a> in editorial design.</p>",
+      "css": ".ds-prose { font-family: Inter, system-ui, sans-serif; font-size: 17px; line-height: 1.65; color: #1a1916; max-width: 65ch; } .ds-link-inline { color: #c0392b; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; transition: color 150ms cubic-bezier(0.25, 1, 0.5, 1), text-decoration-thickness 150ms cubic-bezier(0.25, 1, 0.5, 1); } .ds-link-inline:hover { color: #962d22; text-decoration-thickness: 2px; } .ds-link-inline:focus-visible { outline: 2px solid #1a1916; outline-offset: 2px; }"
+    },
+    {
+      "name": "Section Kicker",
+      "kind": "custom",
+      "refersTo": "kicker-label",
+      "description": "Small red ALL CAPS label above section headlines, paired with a hairline rule extending to the right. The signature typographic element.",
+      "html": "<div class=\"ds-kicker\"><span>BUILD GUIDE · CLAUDE CODE + OBSIDIAN</span></div>",
+      "css": ".ds-kicker { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; } .ds-kicker span { font-family: Newsreader, Georgia, serif; font-weight: 600; font-size: 13px; line-height: 1.2; letter-spacing: 0.18em; text-transform: uppercase; color: #c0392b; white-space: nowrap; } .ds-kicker::after { content: ''; flex: 1; height: 1px; background: #ccc9be; }"
+    },
+    {
+      "name": "Code Block",
+      "kind": "custom",
+      "refersTo": "code-block",
+      "description": "Near-black background with lime-green text. JetBrains Mono. The single piece of lab-notebook energy in a paper palette. Square corners.",
+      "html": "<pre class=\"ds-code-block\"><code>const portfolio = build(craft);</code></pre>",
+      "css": ".ds-code-block { background: #1a1916; color: #c8f542; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 14px; line-height: 1.6; padding: 24px 28px; border-radius: 0; margin: 0; overflow-x: auto; }"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "refersTo": "input-text",
+      "description": "Paper-on-paper field with hairline tan border. Focus swaps border to ink and adds an outline. Label sits above in muted ink.",
+      "html": "<label class=\"ds-input-wrap\"><span class=\"ds-input-label\">EMAIL</span><input type=\"email\" class=\"ds-input-text\" placeholder=\"hello@example.com\"></label>",
+      "css": ".ds-input-wrap { display: flex; flex-direction: column; gap: 8px; } .ds-input-label { font-family: Inter, system-ui, sans-serif; font-weight: 500; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: #6b6760; } .ds-input-text { background: #f5f2eb; color: #1a1916; font-family: Inter, system-ui, sans-serif; font-size: 17px; line-height: 1.5; padding: 12px 14px; border: 1px solid #ccc9be; border-radius: 2px; transition: border-color 150ms cubic-bezier(0.25, 1, 0.5, 1); } .ds-input-text:focus { border-color: #1a1916; outline: 2px solid #1a1916; outline-offset: 2px; }"
+    },
+    {
+      "name": "Project Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Cream-card surface, no shadow, optional 1px border. Internal padding 32px. Kicker, title, and meta inside. Square corners.",
+      "html": "<article class=\"ds-card\"><div class=\"ds-kicker\"><span>CASE STUDY · 2026</span></div><h3 class=\"ds-card-title\">Compliance Exam Platform</h3><p class=\"ds-card-meta\">Next.js · PostgreSQL · Drizzle · Authentik</p><p class=\"ds-card-body\">A multi-role platform for U-Chain Directors with proctored exams, role-based dashboards, and a question bank.</p></article>",
+      "css": ".ds-card { background: #ede9e0; padding: 32px; border-radius: 0; max-width: 560px; } .ds-kicker { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; } .ds-kicker span { font-family: Newsreader, Georgia, serif; font-weight: 600; font-size: 13px; line-height: 1.2; letter-spacing: 0.18em; text-transform: uppercase; color: #c0392b; white-space: nowrap; } .ds-kicker::after { content: ''; flex: 1; height: 1px; background: #ccc9be; } .ds-card-title { font-family: Newsreader, Georgia, serif; font-weight: 600; font-size: 22px; line-height: 1.3; color: #1a1916; margin: 0 0 12px 0; } .ds-card-meta { font-family: Inter, system-ui, sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: #6b6760; margin: 0 0 16px 0; } .ds-card-body { font-family: Inter, system-ui, sans-serif; font-size: 17px; line-height: 1.65; color: #3d3b36; max-width: 65ch; margin: 0; }"
+    },
+    {
+      "name": "Top Navigation",
+      "kind": "nav",
+      "refersTo": "nav",
+      "description": "Text-only links, no chrome, no buttons. Hover swaps text color to Press Red.",
+      "html": "<nav class=\"ds-nav\"><a href=\"#work\" class=\"ds-nav-link\">Work</a><a href=\"#about\" class=\"ds-nav-link\">About</a><a href=\"#writing\" class=\"ds-nav-link\">Writing</a><a href=\"#contact\" class=\"ds-nav-link\">Contact</a></nav>",
+      "css": ".ds-nav { display: flex; gap: 32px; padding: 16px 0; } .ds-nav-link { font-family: Inter, system-ui, sans-serif; font-weight: 500; font-size: 14px; color: #1a1916; text-decoration: none; transition: color 250ms cubic-bezier(0.25, 1, 0.5, 1); } .ds-nav-link:hover { color: #c0392b; } .ds-nav-link:focus-visible { outline: 2px solid #1a1916; outline-offset: 2px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Letterpress Notebook",
+    "overview": "A warm-paper page composed with broadsheet discipline and a single ink-stamp red. The site sits at the intersection of two crafts: the typographer's letterpress (paper, serif, scarce ink) and the engineer's lab notebook (precise spacing, surgical motion, code as an honest visual element). Every choice is deliberate. Color is rationed. Motion is purposeful. Whitespace is the medium, not the leftover. The bridge that resolves the warmth-versus-precision tension is the leading principle from PRODUCT.md: editorial palette, Rauno-grade discipline. Warmth in color and type. Austerity in execution and motion.",
+    "keyCharacteristics": [
+      "Warm paper (#f5f2eb) is the dominant surface; never pure white, never pure gray.",
+      "Press-red (#c0392b) is the only saturated accent and occupies less than 3 percent of any visible viewport.",
+      "Type pairs editorial serif (Newsreader) for display and kicker with humanist sans (Inter) for body and UI.",
+      "Surfaces are flat. Depth comes from background tonal shifts and hairline borders, not shadows.",
+      "Animation is restrained: ease-out-expo entrances, instant state changes, total respect for prefers-reduced-motion.",
+      "Code blocks are the one tech jolt: near-black ink with lime-green text. Their contrast against paper is the design's other point."
+    ],
+    "rules": [
+      { "name": "The 3 Percent Rule", "body": "Press Red occupies less than 3 percent of any visible viewport at any scroll position. Squint at a screenshot: if red dominates, it has been over-applied.", "section": "colors" },
+      { "name": "The Two-Ink Rule", "body": "The default ink for headings and buttons is #1a1916, not red. Red appears on kickers, inline body links, the optional H1 keyword, and the primary button's hover state.", "section": "colors" },
+      { "name": "The Utility-Accent Rule", "body": "Steel Blue and Forest Green carry semantic load only. Steel Blue for reference, Forest Green for confirmation. They never appear as decoration.", "section": "colors" },
+      { "name": "The No-Pure-Neutral Rule", "body": "Every neutral is tinted toward the warm hue. Pure #000, pure #fff, and untinted grays are forbidden.", "section": "colors" },
+      { "name": "The 65ch Rule", "body": "Body copy is capped at 65 characters per line. Wider lines kill reading speed and break editorial feel instantly.", "section": "typography" },
+      { "name": "The Two-Family Visible Rule", "body": "A reader scrolling the home page sees Newsreader and Inter. Mono lives inside code blocks only. Three families on the page at the same time is a slop tell.", "section": "typography" },
+      { "name": "The Kicker-Tracking Rule", "body": "Kicker labels take 0.18em letter-spacing minimum. Tight kicker labels read as accidental, not designed.", "section": "typography" },
+      { "name": "The Display-Tightening Rule", "body": "Any heading 32px or larger gets letter-spacing -0.01em or tighter. Default tracking on large display type is sloppy by default.", "section": "typography" },
+      { "name": "The Flat Rule", "body": "No shadows on any surface. Drop shadows, glow effects, and elevation simulations are forbidden. If a card needs to feel lifted, change its background to Paper Cream Card.", "section": "elevation" },
+      { "name": "The Hairline Rule", "body": "Every divider is 1px. 2px-and-thicker rules belong to product UIs and dashboard chrome.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep Press Red below 3 percent of any visible viewport. Use it as a stamp, not as paint.",
+      "Do tint every neutral toward the warm hue. Use #1a1916, never #000. Use #f5f2eb, never #fff.",
+      "Do pair Newsreader (display, kicker) with Inter (body, UI), and use JetBrains Mono inside code blocks only.",
+      "Do cap body copy at 65 characters per line, regardless of viewport width.",
+      "Do apply 0.18em letter-spacing on kickers and 0.06em on small ALL-CAPS labels.",
+      "Do tighten letter-spacing on display headings (-0.01em or tighter on anything 32px or larger).",
+      "Do use background tonal shifts and hairline borders for depth, not shadows.",
+      "Do make code blocks numerous and prominent. They are the design's tech jolt and a critical signal that this is a developer's portfolio.",
+      "Do respect prefers-reduced-motion on every GSAP and Lenis animation.",
+      "Do render visible focus rings (2px solid Ink Near-Black, 2px offset). Never outline: none without replacement.",
+      "Do vary section padding for rhythm. Hero sections breathe larger; navigation rows tighten."
+    ],
+    "donts": [
+      "Don't ship a filled red CTA button. Press Red appears on the primary button's hover state, never on its resting state.",
+      "Don't use red on H2, H3, or H4. Default heading ink is #1a1916.",
+      "Don't introduce a second saturated accent (indigo, violet, electric blue, neon green). The palette is committed to one color.",
+      "Don't use Steel Blue or Forest Green as decoration. They are semantic-only.",
+      "Don't add shadows. The system is flat.",
+      "Don't use border-left or border-right greater than 1px as a colored accent stripe.",
+      "Don't ship gradient text. Editorial type is solid ink.",
+      "Don't ship glassmorphism or backdrop blurs. Paper is opaque.",
+      "Don't ship a v0-style bento grid of identical feature cards.",
+      "Don't ship Trusted by logo strips, urgency banners, available for hire pulsing dots, hero metric cards, or rocket-emoji headlines.",
+      "Don't use elastic, bounce, or back-out easing. Paper does not bounce.",
+      "Don't animate CSS layout properties. Animate transform and opacity only.",
+      "Don't add a custom cursor or scroll-jacking.",
+      "Don't ship dark mode on first release."
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+---
+id: slashml
+company: SlashML
+role: Full Stack Developer
+startDate: 2024-04
+endDate: 2024-07
+location: Remote
+kicker: "ENGINEERING · 2024"
+summary: "A three-month stint building queue-based, Pulumi-driven EC2 provisioning so LLM workloads could spin up on demand without breaking the running fleet."
+url:
+---
+
+I spent three months at SlashML on a narrow brief: stand up an EC2 host for an LLM workload, on demand, without disturbing the rest of the fleet. LLM workloads are picky about hardware, model weights are large, and a static fleet either burns money on idle GPUs or runs out of capacity right when a customer needs one. Manual provisioning does not survive contact with real traffic.
+
+I built the provisioner in Pulumi so the infrastructure was code that could be reasoned about and rolled back, then put it behind a queue so install jobs could be paced, retried, and inspected instead of fired blindly at AWS. New models came up cleanly; old ones got recycled without taking neighbors with them. To make the running system legible, I built a small internal dashboard for the team: which boxes were live, which models were on them, and where the deploys were stuck. Short engagement, but the kind of work where the constraints force you to think clearly about state, failure, and observability from day one.

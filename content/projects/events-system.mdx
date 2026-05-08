@@ -1,0 +1,27 @@
+---
+id: events-system
+slug: events-system
+title: "Events System"
+year: 2023
+kicker: "PAYMENTS · 2023"
+role: "Author"
+tech:
+  - Next.js
+  - TypeScript
+  - Stripe
+  - MongoDB
+  - Zod
+repoUrl: https://github.com/hadi21k/events_system
+liveUrl:
+status: personal
+oneLineSummary: "A from-scratch events booking app where Stripe Checkout handled payments and the genuinely interesting work was Zod validation and seat capacity logic against MongoDB."
+featured: false
+---
+
+A small events platform built end to end: organizers create events, attendees book seats, payment runs through Stripe Checkout. Next.js 14 on the frontend, Mongoose for persistence, TypeScript throughout. The shape of the project is deliberately humble. The interesting parts are not.
+
+Stripe Checkout did the heavy lifting on payments, which is the right call for a personal project. The redirect flow is boring, well-documented, and (importantly) not where the bugs live. Most of the engineering time went into two other places. First, schema validation with Zod at every boundary that touches user input or external data: form submissions, route handlers, webhook payloads. Validating once at the edge meant the rest of the code could trust its inputs and stop defensive-coding around them. Second, seat and capacity logic on top of MongoDB. Counting available seats sounds trivial until two attendees check out at the same instant against the same event document; the booking state has to be consistent even when the writes are not.
+
+I leaned on Mongoose for the schema layer and accepted the tradeoff: rapid iteration in exchange for a database that is not, by itself, going to enforce capacity invariants for me. Most of the careful logic sits in application code.
+
+Rewriting today, I would put this on Postgres and let row-level locking do the work the application is currently doing by hand.

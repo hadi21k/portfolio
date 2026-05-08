@@ -1,0 +1,19 @@
+---
+id: pixel38
+company: Pixel38
+role: Full Stack Developer
+startDate: 2024-07
+endDate: null
+location: Beirut, Lebanon
+kicker: "ENGINEERING · SINCE 2024"
+summary: "Carrying a full-stack shipment platform end-to-end, from client conversations to legacy refactors and a queue-based invoice integration with enterprise accounting systems."
+url:
+---
+
+The shipment platform was already running when I joined, and it kept running because someone made decisions every day. I became that person. One developer, one platform, one set of clients to talk to directly. Architecture calls, scope calls, the awkward email when a release slips: all on me. That posture changed how I wrote code. You ship differently when there is no one downstream to clean up after you.
+
+Years of shipping under pressure had left the codebase dense with conditionals nobody could fully explain. I started at the worst file and worked outward, replacing tangled flows with smaller, named pieces, retiring dead branches, and pushing tests in front of the parts that mattered most. About forty percent of the technical debt came off the books over time. Core logistics workflows that nobody wanted to touch are now boring to read, which is the highest compliment a system like that can earn.
+
+The trickiest piece was wiring the platform into enterprise accounting. Invoice sync had to be reliable across networks I did not control, schemas that moved without warning, and clients who expected the dashboard to keep responding while reconciliation happened in the background. I moved the integration onto a queue, took retries off the request path, and gave operators a way to inspect failures instead of guessing. The error rate fell.
+
+Alongside that, I built the backend API and internal operations portal for a real-time food-delivery product: order intake, live driver tracking, restaurant onboarding, and the dispatcher screen that has to stay legible while a queue is moving. Today the work is mostly stewardship: keeping the platform stable, extending it where the business needs room, and resisting the urge to add anything it does not yet earn.

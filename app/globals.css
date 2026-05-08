@@ -1,0 +1,177 @@
+@import "tailwindcss";
+
+/*
+ * Design tokens for "Hadi's Portfolio"
+ * North Star: The Letterpress Notebook
+ * See DESIGN.md for the full spec, named rules, and do's/don'ts.
+ * Hex values are normative; OKLCH equivalents live in DESIGN.json's colorMeta.
+ */
+
+@theme inline {
+  /* Color palette */
+  --color-paper-cream: #f5f2eb;
+  --color-paper-cream-card: #ede9e0;
+  --color-paper-cream-hover: #e4dfd4;
+
+  --color-ink-near-black: #1a1916;
+  --color-ink-secondary: #3d3b36;
+  --color-ink-muted: #6b6760;
+
+  --color-press-red: #c0392b;
+  --color-press-red-deep: #962d22;
+
+  --color-steel-blue: #2563a8;
+  --color-forest-green: #1a6b3a;
+
+  --color-warm-tan-border: #ccc9be;
+
+  --color-code-ink: #1a1916;
+  --color-code-lime: #c8f542;
+
+  /* Font stacks (CSS variables from next/font/google in lib/fonts.ts) */
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
+  --font-sans: var(--font-body);
+  --font-serif: var(--font-display);
+
+  /* Letter spacing scale tuned to DESIGN.md typography rules */
+  --tracking-kicker: 0.18em;
+  --tracking-label: 0.06em;
+  --tracking-display-tight: -0.02em;
+  --tracking-headline-tight: -0.01em;
+
+  /* Radii: editorial = sharp */
+  --radius-none: 0px;
+  --radius-input: 2px;
+
+  /* Motion tokens (mirrored in DESIGN.json/extensions/motion) */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+
+  --duration-fast: 150ms;
+  --duration-base: 250ms;
+  --duration-slow: 400ms;
+  --duration-glide: 800ms;
+}
+
+/*
+ * Base layer: paper background, ink text, body sans by default.
+ * Selection uses press-red on paper-cream-card for legibility.
+ */
+@layer base {
+  html {
+    color-scheme: light;
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    font-optical-sizing: auto;
+  }
+
+  body {
+    background-color: var(--color-paper-cream);
+    color: var(--color-ink-near-black);
+    font-family: var(--font-body), system-ui, sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    font-feature-settings: "kern", "liga", "calt";
+  }
+
+  ::selection {
+    background-color: var(--color-press-red);
+    color: var(--color-paper-cream);
+  }
+
+  /* Visible focus rings; never `outline: none` without replacement. */
+  :focus-visible {
+    outline: 2px solid var(--color-ink-near-black);
+    outline-offset: 2px;
+  }
+}
+
+/*
+ * Drop cap for the About page lede.
+ * The DESIGN.md "Section Ornament: Drop Cap" rule reserves this flourish for
+ * the first paragraph of the About page only. Wrap the about narrative in
+ * <article class="about-narrative">…</article> and the first paragraph
+ * receives the drop cap automatically. One per page maximum.
+ */
+.about-narrative > p:first-child {
+  margin-top: 0;
+}
+
+.about-narrative > p:first-child::first-letter {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 5.5em;
+  line-height: 0.85;
+  color: var(--color-press-red);
+  float: left;
+  margin-top: 6px;
+  margin-right: 10px;
+}
+
+/*
+ * prefers-reduced-motion fallback (DESIGN.md "Reduced motion" rule).
+ * Strips transitions, animations, and scroll smoothing for users who opt out.
+ * GSAP and Lenis must also gate themselves on prefersReducedMotion() in lib/lenis.ts.
+ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/*
+ * Animation initial states (Step 15).
+ *
+ * Wrapped in @media (prefers-reduced-motion: no-preference) so that:
+ *   - Motion-allowed users get hidden initial states; MotionProvider then
+ *     animates them in on mount (hero) and on scroll (sections).
+ *   - Reduced-motion users see content at first paint with zero JS dependency.
+ *
+ * The <noscript> rule below restores the visible state so JS-disabled users
+ * still see the page even though MotionProvider never runs.
+ *
+ * Why transform + opacity only: GPU-accelerated, no layout cost. Aligns with
+ * the DESIGN.md "Don't" rule against animating layout properties.
+ */
+@media (prefers-reduced-motion: no-preference) {
+  [data-reveal],
+  [data-reveal-children] > * {
+    opacity: 0;
+    transform: translateY(16px);
+    will-change: transform, opacity;
+  }
+
+  [data-hero-kicker] {
+    opacity: 0;
+  }
+
+  [data-hero-rule] {
+    transform: scaleX(0);
+    transform-origin: left center;
+    will-change: transform;
+  }
+
+  [data-hero-headline] {
+    opacity: 0;
+    transform: translateY(12px);
+    will-change: transform, opacity;
+  }
+
+  [data-hero-keyword] {
+    color: var(--color-ink-near-black);
+  }
+
+  [data-hero-deck],
+  [data-hero-cue] {
+    opacity: 0;
+    transform: translateY(8px);
+    will-change: transform, opacity;
+  }
+}

@@ -1,0 +1,27 @@
+---
+id: nextjs-job-board
+slug: nextjs-job-board
+title: "Next.js Job Board"
+year: 2024
+kicker: "MARKETPLACE · 2024"
+role: "Author"
+tech:
+  - Next.js
+  - Prisma
+  - PostgreSQL
+  - Clerk
+  - Tailwind
+repoUrl: https://github.com/hadi21k/nextjs_job_board
+liveUrl:
+status: personal
+oneLineSummary: "A two-sided job board where employers post paid listings and candidates browse, with Clerk for auth, Prisma on Postgres, and Vercel Blob for assets."
+featured: false
+---
+
+A two-sided marketplace. Employers post jobs (some free, some paid), candidates browse and filter. Two distinct user shapes meeting on the same surface, which is the whole interesting problem.
+
+Auth went to Clerk on purpose. Hand-rolling email verification, password reset, OAuth, and session management for a side project is a way to ship nothing for three weeks; Clerk solves it in an afternoon and gets out of the way. The cost is a vendor in the auth path, which I judged acceptable for a project of this scope. Data sits in Postgres behind Prisma, with the schema modeling the asymmetry of the two sides: an employer record owns many job postings, a candidate record owns applications and saved listings. Prisma's relations and type generation made the read paths pleasant and kept the API routes honest about what they were returning.
+
+Company logos and job-related assets live in Vercel Blob storage. Putting binaries in Postgres is a known mistake, and Vercel Blob is the lowest-friction option when the rest of the stack is already on Vercel. Shadcn for components, Tailwind for layout, Zod at the form boundary.
+
+If I were extending this, the next move is search: full-text indexing on titles and descriptions, with proper filters on location, role, and salary band. A job board is a search product wearing a feed.

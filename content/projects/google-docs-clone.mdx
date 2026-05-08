@@ -1,0 +1,27 @@
+---
+id: google-docs-clone
+slug: google-docs-clone
+title: "Real-time Document Editor"
+year: 2023
+kicker: "COLLABORATION · 2023"
+role: "Author"
+tech:
+  - Node.js
+  - Express
+  - Next.js
+  - Socket.io
+  - Passport.js
+repoUrl: https://github.com/hadi21k/google_docs_clone
+liveUrl:
+status: personal
+oneLineSummary: "A real-time collaborative editor over Socket.io with session auth, the kind of basic clone that teaches you why operational transform and CRDT libraries exist."
+featured: false
+---
+
+The hard problem in collaborative editing is small: two users typing into the same paragraph at the same moment, neither of them losing a keystroke. Everything else (the toolbar, the cursor, the document list) is window dressing around that one concurrency problem. This project is an honest attempt at it.
+
+It is a clone, not a production editor. Node and Express on the server, Next.js on the client with SSR for the document shell, Socket.io for the live channel between them. Auth runs on Passport.js with Express Session, which is the standard, unglamorous, correct choice for a server-rendered Node app of this shape. Sessions sit in memory for development; a real deployment would move them to a session store.
+
+The editing flow broadcasts changes over Socket.io and applies them as they arrive. This works the way you would expect for one user. With two users editing nearby ranges, you start seeing the failure modes that motivate the field: lost characters when events arrive out of order, cursors that jump when remote edits land on top of local ones, the occasional document that diverges between clients and never reconciles.
+
+That is the lesson the project actually teaches. Operational transform and CRDTs are not academic; they are what you reach for the moment naive broadcasting stops being enough, which happens earlier than you would guess.
