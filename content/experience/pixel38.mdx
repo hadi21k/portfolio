@@ -6,7 +6,7 @@ startDate: 2024-07
 endDate: null
 location: Beirut, Lebanon
 kicker: "ENGINEERING · SINCE 2024"
-summary: "Carrying a full-stack shipment platform end-to-end, from client conversations to legacy refactors and a queue-based invoice integration with enterprise accounting systems."
+summary: "Carrying a multi-tenant shipment platform end-to-end, with side work spanning a real-time food-delivery backend, a queue-based ERP invoice integration, a Dahua DSS camera bridge, and a multi-tenant agentic customer-support platform on LangChain and LangGraph."
 url:
 ---
 
@@ -16,4 +16,10 @@ Years of shipping under pressure had left the codebase dense with conditionals n
 
 The trickiest piece was wiring the platform into enterprise accounting. Invoice sync had to be reliable across networks I did not control, schemas that moved without warning, and clients who expected the dashboard to keep responding while reconciliation happened in the background. I moved the integration onto a queue, took retries off the request path, and gave operators a way to inspect failures instead of guessing. The error rate fell.
 
-Alongside that, I built the backend API and internal operations portal for a real-time food-delivery product: order intake, live driver tracking, restaurant onboarding, and the dispatcher screen that has to stay legible while a queue is moving. Today the work is mostly stewardship: keeping the platform stable, extending it where the business needs room, and resisting the urge to add anything it does not yet earn.
+Alongside that, I built the Laravel backend and internal operations portal for a real-time food-delivery product: order lifecycle, courier dispatch, restaurant onboarding, and the dispatcher screen that has to stay legible while a queue is moving. The React Native mobile clients talked to it through a dedicated API.
+
+A separate brief took me into physical-security wiring. I integrated Dahua IP cameras with the Dahua DSS server and piped real-time face- and person-detection events into the operations dashboard over Socket.io. Staff now respond to what is happening on a floor while it is happening, instead of scrubbing through footage the next morning to figure out what they missed.
+
+The most recent stretch has been a multi-tenant AI agentic customer-support platform on LangChain and LangGraph, with a knowledge base and RAG behind the answers, channels for web chat, WhatsApp, Instagram, and BotPress, and a real-time inbox with team routing on top. The interesting work was the governance layer: per-tenant token caps and a model allowlist, so AI cost and behavior are something an admin can actually see and bound, not a number you discover at the end of the month.
+
+Today the rest of the work is stewardship: keeping the platform stable, extending it where the business needs room, and resisting the urge to add anything it does not yet earn.

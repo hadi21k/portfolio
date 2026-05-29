@@ -9,7 +9,7 @@ export const experience: IExperienceMeta[] = [
     endDate: null,
     location: "Beirut, Lebanon",
     summary:
-      "Carrying a full-stack shipment platform end-to-end, from client conversations to legacy refactors and a queue-based invoice integration with enterprise accounting systems.",
+      "Carrying a multi-tenant shipment platform end-to-end, with side work spanning a real-time food-delivery backend, a queue-based ERP invoice integration, a Dahua DSS camera bridge, and a multi-tenant agentic customer-support platform on LangChain and LangGraph.",
   },
   {
     id: "slashml",

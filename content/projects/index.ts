@@ -48,7 +48,16 @@ export const projects: IProjectMeta[] = [
     kicker: "CLIENT WORK · REGULATED FINANCE · 2026",
     oneLineSummary:
       "An exam platform for a regulated-finance compliance advisory: outbox events and a Postgres-only job queue, pgvector and OpenAI for author-time question similarity, and a five-state compliance model that drives the right escalations.",
-    tech: ["TypeScript", "React", "Express", "PostgreSQL", "Prisma", "pgvector", "OpenAI"],
+    tech: [
+      "TypeScript",
+      "React",
+      "Express",
+      "PostgreSQL",
+      "Prisma",
+      "pgvector",
+      "OpenAI",
+      "Authentik",
+    ],
     kind: "freelance",
     featured: false,
   },

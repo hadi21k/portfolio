@@ -13,6 +13,7 @@ tech:
   - Prisma
   - pgvector
   - OpenAI
+  - Authentik
 status: under-contract
 oneLineSummary: "An exam platform for a regulated-finance compliance advisory: outbox events and a Postgres-only job queue, pgvector and OpenAI for author-time question similarity, and a five-state compliance model that drives the right escalations."
 featured: false
@@ -30,6 +31,14 @@ Domain events (exam published, score available, exam deleted) are written inside
 ## Author-time question similarity with embeddings
 
 Every question is embedded with OpenAI and stored as `halfvec(3072)` with an HNSW index. When an author submits a new question, the service runs cosine similarity against the existing pool and warns of near-duplicates above a configurable threshold before the question enters review. Re-embedding is gated by a SHA256 content hash, so saving an unchanged question does not re-call OpenAI. The check is advisory: if the AI provider is unreachable, authoring continues without it.
+
+## SSO that drives roles, not just login
+
+The client already had Authentik in front of every other internal tool, with groups that mapped cleanly onto the four roles the platform needs (admin, question creator, reviewer, exam-taker). I wired the platform's auth to Authentik over OAuth2/OIDC for login and SCIM for user and group provisioning, then read roles directly off the SCIM group membership. Adding a new reviewer is a group change in Authentik, not a ticket to me. There is no second user table to drift, no manual onboarding step, and no out-of-band group sync to break.
+
+## Audit-ready exports, not stitched screenshots
+
+Compliance teams have to prove, on demand, who was certified, on what, when, and by which reviewer. The platform exports that record as both Excel and PDF, generated from the same query so the two formats cannot disagree. Excel goes to the spreadsheets the auditors actually open, PDF goes into the binders they actually file. The export work runs through the same Postgres job queue as the rest, so a large period export does not block the request thread and a failed run is something an admin can retry without losing position.
 
 ## A compliance state machine that matches reality
 
