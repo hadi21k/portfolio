@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { SiteFooter, SiteHeader, SkipToContent } from "@/components/layout";
 import MotionProvider from "@/components/providers/MotionProvider";
 import { meta } from "@/content/site";
@@ -70,6 +72,8 @@ export default function RootLayout({
           </main>
         </MotionProvider>
         <SiteFooter />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
